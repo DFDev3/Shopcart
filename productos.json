@@ -1,0 +1,74 @@
+[
+    {
+        "ID de referencia": "001",
+        "Nombre": "Eni Fork Oil 15w",
+        "Precio": 20000.0,
+        "Marca": "Eni",
+        "Distribuidor": "MotoPartes Express",
+        "ID de imagen": "fork15w.png",
+        "Observación": "Aceite para motos de 4 tiempos"
+    },
+    {
+        "ID de referencia": "002",
+        "Nombre": "Eni mix 2T",
+        "Precio": 25000.0,
+        "Marca": "Eni",
+        "Distribuidor": "MotoPartes Express",
+        "ID de imagen": "mix2t.png",
+        "Observación": "Aceite para motos de 2 tiempos"
+    },
+    {
+        "ID de referencia": "003",
+        "Nombre": "Mobil Super 10w-30",
+        "Precio": 39000.0,
+        "Marca": "Mobil",
+        "Distribuidor": "MotoPartes Express",
+        "ID de imagen": "mobil10w-30.png",
+        "Observación": "Aceite para motos de 4 tiempos"
+    },
+    {
+        "ID de referencia": "004",
+        "Nombre": "Mobil Super 20w-50 ",
+        "Precio": 48000.0,
+        "Marca": "Mobil",
+        "Distribuidor": "MotoPartes Express",
+        "ID de imagen": "mobil20w50.png",
+        "Observación": "Aceite para motos de 4 tiempos"
+    },
+    {
+        "ID de referencia": "005",
+        "Nombre": "Motul 7100 10w-50",
+        "Precio": 40000.0,
+        "Marca": "Motul",
+        "Distribuidor": "MotoPartes Express",
+        "ID de imagen": "motul10w-50.png",
+        "Observación": "Aceite para motos de 4 tiempos"
+    },
+    {
+        "ID de referencia": "006",
+        "Nombre": "Motul 5000 20w-50",
+        "Precio": 42000.0,
+        "Marca": "Motul",
+        "Distribuidor": "MotoPartes Express",
+        "ID de imagen": "motul20w-50.png",
+        "Observación": "Aceite para motos de 4 tiempos"
+    },
+    {
+        "ID de referencia": "007",
+        "Nombre": "Yamalube 2T",
+        "Precio": 35000.0,
+        "Marca": "Yamalube",
+        "Distribuidor": "MotoPartes Express",
+        "ID de imagen": "yamalube2t.png",
+        "Observación": "Aceite para motos de 2 tiempos"
+    },
+    {
+        "ID de referencia": "008",
+        "Nombre": "Yamalube 10w-40",
+        "Precio": 36000.0,
+        "Marca": "Yamalube",
+        "Distribuidor": "MotoPartes Express",
+        "ID de imagen": "yamalube10w-40.png",
+        "Observación": "Aceite para motos de 4 tiempos"
+    }
+]
