@@ -1,87 +1,151 @@
-nav {
-    background: linear-gradient(to bottom, #ffffff, #ff0000);
-    padding: 0px;
+/* Estilos generales */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Barra de navegación */
+.navbar {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+    background-color: rgb(138, 3, 3);
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 10%;
 }
 
 .logo img {
-    max-width: 60px; /* Ajusta el tamaño máximo de tu logo */
+    max-width:10%;
+    height: auto;
+    padding-left: 30%;
 }
 
-.nav-links {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+/* Contenedor de elementos de navegación */
+.nav-items {
     display: flex;
-    justify-content: center;
+    align-items:center;
+    flex-direction: column;
+    margin-left: auto;
+    width: fit-content;
+    padding-right:  10%;
+    margin-top: 0%;
+    padding-top: 0%;
+     /* Hace que los elementos ocupen el espacio restante */
 }
 
-.nav-links li {
-    margin-right: 10px;
+/* Contenedor superior de elementos de navegación */
+.top-nav {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10%;
 }
 
-.nav-links a {
-    color: #fff;
+.top-nav a {
     text-decoration: none;
-    padding: 20px;
+    color: #fff;
+    margin-right: 20px;
+    padding-right: 10px;
+    width: fit-content;
+
+
+}
+.shopcart{
+    background-color: rgba(250, 168, 168, 0.514);
+    padding-top: 0%;
+}
+/* Contenedor del carrito de compras */
+.cart {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
 }
 
-.nav-links a:hover {
-    color: black;
-    background: #ee70702a;
-}
-
-.contact-cart {
+.cart a {
+    text-decoration: none;
+    color: #fff;
     display: flex;
     align-items: center;
 }
 
-.contact-cart a {
+.top-nav img {
+    max-width: 30px; /* Tamaño del carrito de compras */
+    height: auto;
+    margin-right: 5px;
+}
+
+.cart-counter {
+    background-color: #ff2323;
     color: #fff;
-    text-decoration: none;
-    padding-right: 40px;
-    padding-left: 40px;
-}
-.contact-cart a:hover {
-    color: black;
-    background: #ee70702a;
-
+    border-radius: 50%;
+    padding: 5px 10px;
+    margin-left: 5px;
 
 }
-.cart-icon {
-    width: 30px; /* Ajusta el ancho del icono según tu diseño */
-    height: 30px; /* Ajusta la altura del icono según tu diseño */
-    display: inline-block;
-    vertical-align: middle;
-    size:10% ;
-    cursor: pointer; /* Agrega un cursor para indicar que es interactivo */
+/* Contenedor inferior de elementos de navegación */
+.bottom-nav {
+    display: flex;
+    align-items: center;
 }
+
+/* Barra de búsqueda */
 .search-box {
     display: flex;
     align-items: center;
 }
 
 .search-box input[type="text"] {
-    padding: 10px;
+    padding: 5px;
     border: none;
-    border-radius: 5px;
-    margin-right: 5px;
+    border-radius: 10px;
+    margin-right: 10px;
 }
 
-.search-box button[type="submit"] {
-    background-color: #4d2b2b;
+.search-box button {
+    background-color: #007bff;
     color: #fff;
     border: none;
     border-radius: 5px;
     padding: 5px 10px;
     cursor: pointer;
-}
-
-/* Alinea la barra de búsqueda verticalmente con otros elementos en la barra de navegación */
-.nav-links, .contact-cart {
-    display: flex;
+    align-content: center;
     align-items: center;
 }
+.second-navbar {
+    background-color: #000;
+    color: #fff;
+    padding: 10px;
+    position: fixed;
+    top: 60px; /* Espacio para la barra principal */
+    left: 0;
+    right: 0;
 
+    margin-top: 3rem;
+}
+
+.second-navbar ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.second-navbar ul li {
+    margin: 0;
+    padding: 0;
+}
+
+.second-navbar ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Contenido de la página */
+.content {
+    margin-top: 120px; /* Espacio para la segunda barra */
+    padding: 20px;
+}
