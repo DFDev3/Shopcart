@@ -205,7 +205,7 @@ body {
     text-align: center;
     border: 1px solid #ddd;
     margin-bottom: 20px;
-
+}
 
 /* --------------- Instancias de productos ---------------  */
 
@@ -266,7 +266,7 @@ body {
 .social-media a img {
     width: 30px; /* Establece el ancho deseado */
     height: auto; /* Permite que la altura se ajuste automáticamente para mantener la proporción */
-
+}
 .product-title {
     font-size: 1.2rem;
     margin: 10px 0;
@@ -289,5 +289,4 @@ body {
 
 .add-to-cart-button:hover {
     background-color: #2980b9;
-
 }
