@@ -1,0 +1,256 @@
+/* Estilos generales */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Barra de navegación */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(138, 3, 3);
+    padding: 10px;
+    position:fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 10%;
+
+}
+
+.logo img {
+    max-width:10%;
+    height: auto;
+    padding-left: 30%;
+}
+
+/* Contenedor de elementos de navegación */
+.nav-items {
+    display: flex;
+    align-items:center;
+    flex-direction: column;
+    margin-left: auto;
+    width: fit-content;
+    padding-right:  10%;
+    margin-top: 0%;
+    padding-top: 0%;
+     /* Hace que los elementos ocupen el espacio restante */
+}
+
+/* Contenedor superior de elementos de navegación */
+.top-nav {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10%;
+}
+
+.top-nav a {
+    text-decoration: none;
+    color: #fff;
+    margin-right: 20px;
+    padding-right: 10px;
+    width: fit-content;
+
+
+}
+.shopcart{
+    background-color: rgba(250, 168, 168, 0.514);
+    padding-top: 0%;
+}
+/* Contenedor del carrito de compras */
+.cart {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.cart a {
+    text-decoration: none;
+    color: #fff;
+    display: flex;
+    align-items: center;
+}
+
+.top-nav img {
+    max-width: 30px; /* Tamaño del carrito de compras */
+    height: auto;
+    margin-right: 5px;
+}
+
+.cart-counter {
+    background-color: #ff2323;
+    color: #fff;
+    border-radius: 50%;
+    padding: 5px 10px;
+    margin-left: 5px;
+
+}
+/* Contenedor inferior de elementos de navegación */
+.bottom-nav {
+    display: flex;
+    align-items: center;
+}
+
+/* Barra de búsqueda */
+.search-box {
+    display: flex;
+    align-items: center;
+}
+
+.search-box input[type="text"] {
+    padding: 5px;
+    border: none;
+    border-radius: 10px;
+    margin-right: 10px;
+}
+
+.search-box button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    align-content: center;
+    align-items: center;
+}
+.second-navbar {
+    background-color: #000;
+    color: #fff;
+    padding: 10px;
+    position: static;
+    top: 0; /* Espacio para la barra principal */
+    left: 0;
+    right: 0;
+    margin-top: 7.3rem;
+
+
+}
+
+.second-navbar ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.second-navbar ul li {
+    margin: 0;
+    padding: 0;
+}
+
+.second-navbar ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+/* Estilos para la vista del carrito de compra */
+/* Estilos para la vista del carrito de compra */
+
+
+.carritoCompra {
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff; /* Fondo blanco para el carrito */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    border-radius: 5px; /* Bordes redondeados */
+}
+.carritoCompra h2 {
+    text-align: center;
+    color: #333; /* Color de texto para el título */
+    margin-bottom: 20px; /* Espacio después del título */
+}
+
+.cart {
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff; /* Fondo blanco para el carrito */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+.cart h2 {
+    text-align: center;
+    color: #333; /* Color de texto para el título */
+    margin-bottom: 20px; /* Espacio después del título */
+}
+
+/* Contenedor para organizar los productos en filas */
+.cart-items-container {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten automáticamente en filas */
+    justify-content: space-between; /* Espacio entre los elementos */
+}
+
+/* Estilos para cada artículo en el carrito */
+.cart-item {
+    width: calc(25% - 10px); /* Ancho máximo de 4 elementos por fila con espacio entre ellos */
+    margin: 0 0 20px; /* Espacio entre los elementos */
+    box-sizing: border-box; /* Incluye el espacio del borde en el ancho */
+    border: 1px solid #ddd; /* Bordes para los elementos */
+    padding: 10px; /* Espacio interno */
+    text-align: center; /* Alinea el texto en el centro */
+}
+
+.cart-item img {
+    max-width: 100%;
+    max-height: 100px;
+    margin-bottom: 10px; /* Espacio entre la imagen y los detalles */
+    border: 1px solid #ddd; /* Bordes para las imágenes */
+}
+
+.item-details h3 {
+    font-size: 1.2em;
+    color: #333; /* Color de texto para el título del producto */
+}
+
+.item-details p {
+    color: #777; /* Color de texto para la descripción del producto */
+}
+
+.item-price p {
+    font-weight: bold;
+    color: #007bff; /* Color de texto para el precio */
+}
+
+.total {
+    text-align: right;
+    margin-top: 20px;
+}
+
+.total h3 {
+    font-weight: bold;
+    color: #333; /* Color de texto para el total */
+}
+
+/*Footer styles*/
+.footer {
+    background-color: rgb(138, 3, 3);
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    position: absolute; /* Posicionamiento absoluto para anclar en la parte inferior */
+    bottom: 0; /* Alinea el footer en la parte inferior */
+    width: 100%; /* Ocupa todo el ancho de la ventana */
+}
+
+.contact-info {
+    margin-bottom: 20px;
+}
+
+.social-media {
+    font-size: 24px;
+}
+
+.social-media a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+.social-media a img {
+    width: 30px; /* Establece el ancho deseado */
+    height: auto; /* Permite que la altura se ajuste automáticamente para mantener la proporción */
+}
