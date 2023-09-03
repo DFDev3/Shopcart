@@ -1,6 +1,6 @@
 nav {
-    background: linear-gradient(to bottom, #FF0000, #FFFFFF);
-    padding: 5px;
+    background: linear-gradient(to bottom, #ffffff, #ff0000);
+    padding: 0px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -29,7 +29,8 @@ nav {
 }
 
 .nav-links a:hover {
-    background: #f89898d2;
+    color: black;
+    background: #ee70702a;
 }
 
 .contact-cart {
@@ -41,10 +42,46 @@ nav {
     color: #fff;
     text-decoration: none;
     padding-right: 40px;
+    padding-left: 40px;
 }
+.contact-cart a:hover {
+    color: black;
+    background: #ee70702a;
 
+
+}
 .cart-icon {
-    color: #fff;
-    font-size: 20px;
+    width: 30px; /* Ajusta el ancho del icono según tu diseño */
+    height: 30px; /* Ajusta la altura del icono según tu diseño */
+    display: inline-block;
+    vertical-align: middle;
+    size:10% ;
     cursor: pointer; /* Agrega un cursor para indicar que es interactivo */
 }
+.search-box {
+    display: flex;
+    align-items: center;
+}
+
+.search-box input[type="text"] {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+.search-box button[type="submit"] {
+    background-color: #4d2b2b;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+/* Alinea la barra de búsqueda verticalmente con otros elementos en la barra de navegación */
+.nav-links, .contact-cart {
+    display: flex;
+    align-items: center;
+}
+
