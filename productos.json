@@ -5,8 +5,7 @@
         "Precio": 20000.0,
         "Marca": "Eni",
         "Distribuidor": "MotoPartes Express",
-        "ID de imagen": "fork15w.png",
-        "Observación": "Aceite para motos de 4 tiempos"
+        "ID de imagen": "0001.png"
     },
     {
         "ID de referencia": "002",
@@ -14,8 +13,7 @@
         "Precio": 25000.0,
         "Marca": "Eni",
         "Distribuidor": "MotoPartes Express",
-        "ID de imagen": "mix2t.png",
-        "Observación": "Aceite para motos de 2 tiempos"
+        "ID de imagen": "0002.png"
     },
     {
         "ID de referencia": "003",
@@ -23,8 +21,7 @@
         "Precio": 39000.0,
         "Marca": "Mobil",
         "Distribuidor": "MotoPartes Express",
-        "ID de imagen": "mobil10w-30.png",
-        "Observación": "Aceite para motos de 4 tiempos"
+        "ID de imagen": "0003.png"
     },
     {
         "ID de referencia": "004",
@@ -32,8 +29,7 @@
         "Precio": 48000.0,
         "Marca": "Mobil",
         "Distribuidor": "MotoPartes Express",
-        "ID de imagen": "mobil20w50.png",
-        "Observación": "Aceite para motos de 4 tiempos"
+        "ID de imagen": "0004.png"
     },
     {
         "ID de referencia": "005",
@@ -41,8 +37,7 @@
         "Precio": 40000.0,
         "Marca": "Motul",
         "Distribuidor": "MotoPartes Express",
-        "ID de imagen": "motul10w-50.png",
-        "Observación": "Aceite para motos de 4 tiempos"
+        "ID de imagen": "0005.png"
     },
     {
         "ID de referencia": "006",
@@ -50,8 +45,7 @@
         "Precio": 42000.0,
         "Marca": "Motul",
         "Distribuidor": "MotoPartes Express",
-        "ID de imagen": "motul20w-50.png",
-        "Observación": "Aceite para motos de 4 tiempos"
+        "ID de imagen": "0006.png"
     },
     {
         "ID de referencia": "007",
@@ -59,8 +53,7 @@
         "Precio": 35000.0,
         "Marca": "Yamalube",
         "Distribuidor": "MotoPartes Express",
-        "ID de imagen": "yamalube2t.png",
-        "Observación": "Aceite para motos de 2 tiempos"
+        "ID de imagen": "0007.png"
     },
     {
         "ID de referencia": "008",
@@ -68,7 +61,302 @@
         "Precio": 36000.0,
         "Marca": "Yamalube",
         "Distribuidor": "MotoPartes Express",
-        "ID de imagen": "yamalube10w-40.png",
-        "Observación": "Aceite para motos de 4 tiempos"
+        "ID de imagen": "0008.png"
+    },
+    {
+        "ID de referencia": "009",
+        "Nombre": "Soporte universal para maletero ",
+        "Precio": 48900.0,
+        "Marca": "keybok",
+        "Distribuidor": "MotoPartes Express",
+        "ID de imagen": "0009.png"
+    },
+    {
+        "ID de referencia": "010",
+        "Nombre": "Casco de color gris opaco",
+        "Precio": 400000.0,
+        "Marca": "Svr31",
+        "Distribuidor": "MotoPartes Express",
+        "ID de imagen": "0010.png"
+    },
+    {
+        "ID de referencia": "011",
+        "Nombre": "Casco de color gris metalico con visor multicolor",
+        "Precio": 450000.0,
+        "Marca": "Srv31",
+        "Distribuidor": "MotoPartes Express",
+        "ID de imagen": "0011.png"
+    },
+    {
+        "ID de referencia": "012",
+        "Nombre": "Casco color negro mate con visera intercambiable",
+        "Precio": 543000.0,
+        "Marca": "Svr31",
+        "Distribuidor": "MotoPartes Express",
+        "ID de imagen": "0012.png"
+    },
+    {
+        "ID de referencia": "013",
+        "Nombre": "Casco color negro mate con visera negra",
+        "Precio": 543002.0,
+        "Marca": "Svr31",
+        "Distribuidor": "MotoPartes Express",
+        "ID de imagen": "0013.png"
+    },
+    {
+        "ID de referencia": "014",
+        "Nombre": "Casco color negro mate con visera negra",
+        "Precio": 324000.0,
+        "Marca": "Generica",
+        "Distribuidor": "MotoPartes Express",
+        "ID de imagen": "0014.png"
+    },
+    {
+        "ID de referencia": "015",
+        "Nombre": "Casco blanco con detalles en azul",
+        "Precio": 643000.0,
+        "Marca": "Svr31",
+        "Distribuidor": "MotoPartes Express",
+        "ID de imagen": "0015.png"
+    },
+    {
+        "ID de referencia": "016",
+        "Nombre": "Casco gris metalizado con visera naranja",
+        "Precio": 622300.0,
+        "Marca": "Svr31",
+        "Distribuidor": "MotoPartes Express",
+        "ID de imagen": "0016.png"
+    },
+    {
+        "ID de referencia": "017",
+        "Nombre": "Guantes negro con diseño de panal",
+        "Precio": 23100.0,
+        "Marca": "Arlinx",
+        "Distribuidor": "MotoPartes Express",
+        "ID de imagen": "0017.png"
+    },
+    {
+        "ID de referencia": "018",
+        "Nombre": "Guantes negro con detalles blancos",
+        "Precio": 23100.0,
+        "Marca": "Arlinx",
+        "Distribuidor": "MotoPartes Express",
+        "ID de imagen": "0018.png"
+    },
+    {
+        "ID de referencia": "019",
+        "Nombre": "Impermiable de color azul rey y gris",
+        "Precio": 34000.0,
+        "Marca": "TrinoV",
+        "Distribuidor": "MotoPartes Express",
+        "ID de imagen": "0019.png"
+    },
+    {
+        "ID de referencia": "020",
+        "Nombre": "Intercomunicador SS",
+        "Precio": 10000.0,
+        "Marca": "SS",
+        "Distribuidor": "MotoPartes Express",
+        "ID de imagen": "0020.png"
+    },
+    {
+        "ID de referencia": "021",
+        "Nombre": "Maletero Platiado ",
+        "Precio": 321000.0,
+        "Marca": "prety",
+        "Distribuidor": "MotoPartes Express",
+        "ID de imagen": "0021.png"
+    },
+    {
+        "ID de referencia": "021",
+        "Nombre": "Cofre sencillo color negro ",
+        "Precio": 213000.0,
+        "Marca": "Generico",
+        "Distribuidor": "MotoPartes Express",
+        "ID de imagen": "0022.png"
+    },
+    {
+        "ID de referencia": "023",
+        "Nombre": "Cofre sencillo con agarradera color negro",
+        "Precio": 243000.0,
+        "Marca": "Generico",
+        "Distribuidor": "MotoPartes Express",
+        "ID de imagen": "0023.png"
+    },
+    {
+        "ID de referencia": "024",
+        "Nombre": "maletin Para viajar color gris ",
+        "Precio": 52000.0,
+        "Marca": "preparts",
+        "Distribuidor": "MotoPartes Express",
+        "ID de imagen": "0024.png"
+    },
+    {
+        "ID de referencia": "025",
+        "Nombre": "Maletin para viajar gris con negro",
+        "Precio": 89000.0,
+        "Marca": "preparts",
+        "Distribuidor": "MotoPartes Express",
+        "ID de imagen": "0025.png"
+    },
+    {
+        "ID de referencia": "026",
+        "Nombre": "Maletin de viaje color caki",
+        "Precio": 321000.0,
+        "Marca": "preparts",
+        "Distribuidor": "MotoPartes Express",
+        "ID de imagen": "0026.png"
+    },
+    {
+        "ID de referencia": "027",
+        "Nombre": "Soporte para cofre de viaje",
+        "Precio": 213200.0,
+        "Marca": "Vatican",
+        "Distribuidor": "MotoPartes Express",
+        "ID de imagen": "0027.png"
+    },
+    {
+        "ID de referencia": "028",
+        "Nombre": "Protector color negro",
+        "Precio": 35000.0,
+        "Marca": "skyfly",
+        "Distribuidor": "MotoPartes Express",
+        "ID de imagen": "0028.png"
+    },
+    {
+        "ID de referencia": "029",
+        "Nombre": "Soporte para Celular 1",
+        "Precio": 21000.0,
+        "Marca": "CaseShop",
+        "Distribuidor": "MotoPartes Express",
+        "ID de imagen": "0029.png"
+    },
+    {
+        "ID de referencia": "030",
+        "Nombre": "Soporte para celular impermiable",
+        "Precio": 42000.0,
+        "Marca": "CaseShop",
+        "Distribuidor": "MotoPartes Express",
+        "ID de imagen": "0030.png"
+    },
+    {
+        "ID de referencia": "031",
+        "Nombre": "soporte para celular en aluminio",
+        "Precio": 27000.0,
+        "Marca": "CadeShop",
+        "Distribuidor": "MotoPartes Express",
+        "ID de imagen": "0031.png"
+    },
+    {
+        "ID de referencia": "032",
+        "Nombre": "Kit de viaje largo",
+        "Precio": 1000000.0,
+        "Marca": "yamaha",
+        "Distribuidor": "MotoPartes Express",
+        "ID de imagen": "0032.png"
+    },
+    {
+        "ID de referencia": "033",
+        "Nombre": "Candado Para Frenos color amarilo",
+        "Precio": 31000.0,
+        "Marca": "Seguritypop",
+        "Distribuidor": "MotoPartes Express",
+        "ID de imagen": "0033.png"
+    },
+    {
+        "ID de referencia": "034",
+        "Nombre": "Candado Para Frenos color amarilo reducido",
+        "Precio": 28000.0,
+        "Marca": "Keypal",
+        "Distribuidor": "MotoPartes Express",
+        "ID de imagen": "0034.png"
+    },
+    {
+        "ID de referencia": "035",
+        "Nombre": "Luces Exploradoras regulables",
+        "Precio": 55000.0,
+        "Marca": "SunDoble",
+        "Distribuidor": "MotoPartes Express",
+        "ID de imagen": "0035.png"
+    },
+    {
+        "ID de referencia": "036",
+        "Nombre": "Luz exploradora para defensa ",
+        "Precio": 64000.0,
+        "Marca": "lapmtic",
+        "Distribuidor": "MotoPartes Express",
+        "ID de imagen": "0036.png"
+    },
+    {
+        "ID de referencia": "037",
+        "Nombre": "Chaqueta para viajes",
+        "Precio": 321000.0,
+        "Marca": "Richa",
+        "Distribuidor": "MotoPartes Express",
+        "ID de imagen": "0037.png"
+    },
+    {
+        "ID de referencia": "038",
+        "Nombre": "Chaqueta para viajes com banda de luces reflectantes",
+        "Precio": 365000.0,
+        "Marca": "Rott+cot",
+        "Distribuidor": "MotoPartes Express",
+        "ID de imagen": "0038.png"
+    },
+    {
+        "ID de referencia": "039",
+        "Nombre": "Chaqueta para viajes con refuerzo en codos y espalda",
+        "Precio": 524000.0,
+        "Marca": "Chanel",
+        "Distribuidor": "MotoPartes Express",
+        "ID de imagen": "0039.png"
+    },
+    {
+        "ID de referencia": "040",
+        "Nombre": "pantalones de viaje con proteccion en rodillas",
+        "Precio": 645000.0,
+        "Marca": "chanel",
+        "Distribuidor": "MotoPartes Express",
+        "ID de imagen": "0040.png"
+    },
+    {
+        "ID de referencia": "041",
+        "Nombre": "Llanta 125/32/02 para motos 125 a 150",
+        "Precio": 2500000.0,
+        "Marca": "Michelin",
+        "Distribuidor": "MotoPartes Express",
+        "ID de imagen": "0041.png"
+    },
+    {
+        "ID de referencia": "042",
+        "Nombre": "llanta 213/32/20 para 300 cc en adelante",
+        "Precio": 450000.0,
+        "Marca": "Michellin",
+        "Distribuidor": "MotoPartes Express",
+        "ID de imagen": "0042.png"
+    },
+    {
+        "ID de referencia": "043",
+        "Nombre": "Llanta 243/13/09 para 350 cc en adelante",
+        "Precio": 600000.0,
+        "Marca": "Michellin",
+        "Distribuidor": "MotoPartes Express",
+        "ID de imagen": "0043.png"
+    },
+    {
+        "ID de referencia": "044",
+        "Nombre": "Llanta 214/23/04 para 250 cc en adelante",
+        "Precio": 700000.0,
+        "Marca": "Michellin",
+        "Distribuidor": "MotoPartes Express",
+        "ID de imagen": "0044.png"
+    },
+    {
+        "ID de referencia": "045",
+        "Nombre": "Llanta 291/42/05 para 1000 cc en adelante",
+        "Precio": 800000.0,
+        "Marca": "Michellin",
+        "Distribuidor": "MotoPartes Express",
+        "ID de imagen": "0045.png"
     }
 ]
