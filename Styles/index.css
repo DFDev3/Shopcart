@@ -1,0 +1,87 @@
+nav {
+    background: linear-gradient(to bottom, #ffffff, #ff0000);
+    padding: 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    max-width: 60px; /* Ajusta el tamaño máximo de tu logo */
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-links li {
+    margin-right: 10px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    padding: 20px;
+}
+
+.nav-links a:hover {
+    color: black;
+    background: #ee70702a;
+}
+
+.contact-cart {
+    display: flex;
+    align-items: center;
+}
+
+.contact-cart a {
+    color: #fff;
+    text-decoration: none;
+    padding-right: 40px;
+    padding-left: 40px;
+}
+.contact-cart a:hover {
+    color: black;
+    background: #ee70702a;
+
+
+}
+.cart-icon {
+    width: 30px; /* Ajusta el ancho del icono según tu diseño */
+    height: 30px; /* Ajusta la altura del icono según tu diseño */
+    display: inline-block;
+    vertical-align: middle;
+    size:10% ;
+    cursor: pointer; /* Agrega un cursor para indicar que es interactivo */
+}
+.search-box {
+    display: flex;
+    align-items: center;
+}
+
+.search-box input[type="text"] {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+.search-box button[type="submit"] {
+    background-color: #4d2b2b;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+/* Alinea la barra de búsqueda verticalmente con otros elementos en la barra de navegación */
+.nav-links, .contact-cart {
+    display: flex;
+    align-items: center;
+}
+
