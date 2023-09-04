@@ -6,6 +6,7 @@ class Products
     private $products = array();
     public function getProducts()
     {
+        //leer del archivo cart
         return $this->products;
     }
 
