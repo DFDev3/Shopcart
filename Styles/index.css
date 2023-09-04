@@ -56,8 +56,9 @@ body {
 
 }
 .shopcart{
-    background-color: rgba(250, 168, 168, 0.514);
+    
     padding-top: 0%;
+    display: flex;
 }
 /* Contenedor del carrito de compras */
 .cart {
@@ -84,7 +85,9 @@ body {
     color: #fff;
     border-radius: 50%;
     padding: 5px 10px;
-    margin-left: 5px;
+    margin-top: 5px;
+    margin-left: 50px;
+    position: absolute;
 
 }
 /* Contenedor inferior de elementos de navegación */
@@ -226,8 +229,8 @@ body {
 }
 
 .product img {
-    max-width: 100%;
-    height: auto;
+    max-width: 90%;
+    height: 60%;
 }
 
 

@@ -165,10 +165,9 @@ body {
 }
 
 .product img {
-    max-width: 100%;
-    height: auto;
+    max-width: 90%;
+    height: 60%;
 }
-
 
 .product-info {
     margin-top: 10px;

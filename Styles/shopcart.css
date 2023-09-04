@@ -270,3 +270,11 @@ body {
     width: 30px; /* Establece el ancho deseado */
     height: auto; /* Permite que la altura se ajuste automáticamente para mantener la proporción */
 }
+.Pagar{
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 16px;
+    cursor: pointer;
+}
