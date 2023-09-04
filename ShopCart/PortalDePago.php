@@ -135,6 +135,15 @@
                 <input type="text" id="numero_tarjeta" name="numero_tarjeta" pattern="[0-9]{16}" required>
             </div>
             <div class="form-group">
+                <label for="mes_expiracion">Mes de Expiración (mm):</label>
+                <input type="text" id="mes_expiracion" name="mes_expiracion" pattern="(0[1-9]|1[0-2])" placeholder="mm" required inputmode="numeric" maxlength="2">
+            </div>
+            <div class="form-group">
+                <label for="ano_expiracion">Año de Expiración (aa):</label>
+                <input type="text" id="ano_expiracion" name="ano_expiracion" pattern="[0-9]{2}" placeholder="aa" required inputmode="numeric" maxlength="2">
+            </div>
+
+            <div class="form-group">
                 <label for="ccv">CCV:</label>
                 <input type="text" id="ccv" name="ccv" pattern="[0-9]{3}" required>
             </div>
