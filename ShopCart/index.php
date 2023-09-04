@@ -71,10 +71,10 @@
 
         $aux = new Products();
 
-        $aux->addProduct(new Product("Aceite", 2100000, "../Media/img/0001.png", 10), 0);
-        $aux->addProduct(new Product("Más aceite", 564000, "../Media/img/0002.png", 20), 1);
-        $aux->addProduct(new Product("Otro aceite", 60000, "../Media/img/0003.png", 2), 2);
-        $aux->addProduct(new Product("Ya ahora si el ultimo aceite", 2300000, "../Media/img/0004.png", 4), 3);
+        $aux->addProduct(new Product("Aceite", 2100000, "../Media/img/0001.png",'00','',''), 0);
+        $aux->addProduct(new Product("Más aceite", 564000, "../Media/img/0002.png",'00','',''), 1);
+        $aux->addProduct(new Product("Otro aceite", 60000, "../Media/img/0003.png",'00','',''), 2);
+        $aux->addProduct(new Product("Ya ahora si el ultimo aceite", 2300000, "../Media/img/0004.png",'00','',''), 3);
 
         $productos = $aux->getProducts();
         foreach ($productos as $valor) {
