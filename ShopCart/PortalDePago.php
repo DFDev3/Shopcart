@@ -49,7 +49,36 @@
     </ul>
 </div>
 /* ESPACIO PARA FORMULARIO DE PAGO 
-
+<div class="payment-form">
+    <h2>Formulario de Pago</h2>
+    <form action="procesar_pago.php" method="post">
+        <div class="form-group">
+            <label for="nombre_titular">Nombre del Titular:</label>
+            <input type="text" id="nombre_titular" name="nombre_titular" required>
+        </div>
+        <div class="form-group">
+            <label for="numero_tarjeta">Número de Tarjeta:</label>
+            <input type="text" id="numero_tarjeta" name="numero_tarjeta" pattern="[0-9]{16}" required>
+        </div>
+        <div class="form-group">
+            <label for="ccv">CCV:</label>
+            <input type="text" id="ccv" name="ccv" pattern="[0-9]{3}" required>
+        </div>
+        <div class="form-group">
+            <label for="numero_cuotas">Número de Cuotas:</label>
+            <select id="numero_cuotas" name="numero_cuotas">
+                <?php
+                for ($i = 1; $i <= 36; $i++) {
+                    echo "<option value='$i'>$i</option>";
+                }
+                ?>
+            </select>
+        </div>
+        <div class="form-group">
+            <button type="submit" name="pagar">Pagar</button>
+        </div>
+    </form>
+</div>
 
 
 
