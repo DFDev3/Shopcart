@@ -154,6 +154,7 @@ body {
  /* Posicionamiento absoluto para anclar en la parte inferior */
     bottom: 0; /* Alinea el footer en la parte inferior */
     width: 100%; /* Ocupa todo el ancho de la ventana */
+    position: absolute;
 }
 .product {
     border: 1px solid #ccc;
@@ -165,8 +166,8 @@ body {
 }
 
 .product img {
-    max-width: 100%;
-    height: auto;
+    max-width: 90%;
+    height: 60%;
 }
 
 
