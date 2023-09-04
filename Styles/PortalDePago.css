@@ -248,7 +248,7 @@ body {
     color: #fff;
     padding: 20px;
     text-align: center;
-    position: absolute; /* Posicionamiento absoluto para anclar en la parte inferior */
+/* Posicionamiento absoluto para anclar en la parte inferior */
     bottom: 0; /* Alinea el footer en la parte inferior */
     width: 100%; /* Ocupa todo el ancho de la ventana */
 }
@@ -332,4 +332,64 @@ body {
     background-color: #cc0000;
     color: #000;
 
+}
+.cont {
+    display: flex; /* Utiliza flexbox para mostrar los elementos en una fila */
+    justify-content: space-between; /* Espacio entre los elementos */
+    align-items: flex-start; /* Alinea los elementos en la parte superior */
+    flex-wrap: nowrap; /* Evita que los elementos se envuelvan a la siguiente línea */
+}
+
+/* Estilos para el div .cart y .payment-form dentro de .cont */
+.cart, .payment-form {
+    flex: 1; /* Distribuye el espacio disponible de manera uniforme entre estos elementos */
+    margin-right: 20px; /* Espacio entre los elementos (puedes ajustarlo según tu diseño) */
+}
+.product {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    max-width: 300px;
+    margin: 0 auto;
+
+}
+
+.product img {
+    max-width: 90%;
+    height: 60%;
+}
+
+
+.product-info {
+    margin-top: 10px;
+}
+.product-catalog {
+    padding: 20px;
+    max-width: 50%;
+    margin: 0;
+}
+
+.product-row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.product {
+    flex-basis: calc(25% - 10px);
+    box-sizing: border-box;
+    background-color: #fff;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+}
+.add-to-cart {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
 }
