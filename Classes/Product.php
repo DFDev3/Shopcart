@@ -5,17 +5,17 @@ class Product
     private string $name;
     private float $price;
     private string $img;
-    private int $stock;
+    
 
     private string $categoria;
 
 
-    public function __construct($name, $price, $img, $stock,$categoria)
+    public function __construct($name, $price, $img,$categoria)
     {
         $this->name = $name;
         $this->price = $price;
         $this->img = $img;
-        $this->stock = $stock;
+        
         $this->categoria=$categoria;
     }
 
@@ -97,32 +97,14 @@ class Product
 
     public static function __set_state($data)
     {
-        $product = new Product('', 1, '', 0,'00');
+        $product = new Product('', 1, '','00');
         foreach ($data as $key => $value) {
             $product->$key = $value;
         }
         return $product;
     }
 
-    /**
-     * Get the value of stock
-     */
-    public function getStock()
-    {
-        return $this->stock;
-    }
 
-    /**
-     * Set the value of stock
-     *
-     * @return  self
-     */
-    public function setStock($stock)
-    {
-        $this->stock = $stock;
-
-        return $this;
-    }
 }
 
 
