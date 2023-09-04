@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../Styles/shopcart.css">
+    <link rel="stylesheet" href="../Styles/PortalDePago.css">
     <script src="../Styles/shopcart.js"></script>
     <title>MotoGearPro</title>
 </head>
@@ -48,21 +48,40 @@
         <li><a href="ofertas.php">Ofertas</a></li>
     </ul>
 </div>
-/* ESPACIO PARA FORMULARIO DE PAGO 
+
+<div class="payment-form">
+    <h2>Formulario de Pago</h2>
+    <form action="procesar_pago.php" method="post">
+        <div class="form-group">
+            <label for="nombre_titular">Nombre del Titular:</label>
+            <input type="text" id="nombre_titular" name="nombre_titular" required>
+        </div>
+        <div class="form-group">
+            <label for="numero_tarjeta">Número de Tarjeta:</label>
+            <input type="text" id="numero_tarjeta" name="numero_tarjeta" pattern="[0-9]{16}" required>
+        </div>
+        <div class="form-group">
+            <label for="ccv">CCV:</label>
+            <input type="text" id="ccv" name="ccv" pattern="[0-9]{3}" required>
+        </div>
+        <div class="form-group">
+            <label for="numero_cuotas">Número de Cuotas:</label>
+            <select id="numero_cuotas" name="numero_cuotas">
+                <?php
+                for ($i = 1; $i <= 36; $i++) {
+                    echo "<option value='$i'>$i</option>";
+                }
+                ?>
+            </select>
+        </div>
+        <div class="form-group">
+            <button type="submit" name="pagar">Pagar</button>
+        </div>
+    </form>
+</div>
 
 
 
-
-
-
-
-
-
-
-
-
-
-/*FIN DE ESPACIO PARA FORMULARIO
 
 
 <footer class="footer">
@@ -72,8 +91,8 @@
     </div>
     <div class="social-media">
         <a href="#"><img src="../Media/facebook.png" alt="Facebook"></a>
-        <a href="#"><img src="../Media/twitter.png" alt="Twitter"></a>
-        <a href="#"><img src="../Media/instagram.png" alt="Instagram"></a>
+        <a href="https://twitter.com/FateD_GG"><img src="../Media/twitter.png" alt="Twitter"></a>
+        <a href="https://www.instagram.com/denis.fedi/"><img src="../Media/instagram.png" alt="Instagram"></a>
     </div>
 </footer>
 </body>
