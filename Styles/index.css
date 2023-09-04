@@ -56,7 +56,7 @@ body {
 
 }
 .shopcart{
-    background-color: rgba(250, 168, 168, 0.514);
+    
     padding-top: 0%;
     display: flex;
 }
@@ -229,8 +229,8 @@ body {
 }
 
 .product img {
-    max-width: 100%;
-    height: auto;
+    max-width: 90%;
+    height: 60%;
 }
 
 
