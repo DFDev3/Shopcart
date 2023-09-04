@@ -48,39 +48,113 @@
         <li><a href="ofertas.php">Ofertas</a></li>
     </ul>
 </div>
+<div class="cont">
+<div class="product-catalog">
+    <div class="product-row">
+        <div class="product">
+            <img src="../Media/img/0021.png" alt="Producto 1">
+            <div class="product-info">
+                <h3>Producto 1</h3>
+                <p>Descripción del producto</p>
+                
+            </div>
+        </div>
+        <div class="product">
+            <img src="../Media/img/0022.png" alt="Producto 2">
+            <div class="product-info">
+                <h3>Producto 2</h3>
+                <p>Descripción del producto</p>
+                
+            </div>
+        </div>
+        <div class="product">
+            <img src="../Media/img/0023.png" alt="Producto 3">
+            <div class="product-info">
+                <h3>Producto 3</h3>
+                <p>Descripción del producto</p>
+                
+            </div>
+        </div>
+        <div class="product">
+            <img src="../Media/img/0024.png" alt="Producto 4">
+            <div class="product-info">
+                <h3>Producto 4</h3>
+                <p>Descripción del producto</p>
+                
+            </div>
+        </div>
 
-<div class="payment-form">
-    <h2>Formulario de Pago</h2>
-    <form action="procesar_pago.php" method="post">
-        <div class="form-group">
-            <label for="nombre_titular">Nombre del Titular:</label>
-            <input type="text" id="nombre_titular" name="nombre_titular" required>
+    </div>
+    <div class="product-row">
+        <div class="product">
+            <img src="../Media/img/0025.png" alt="Producto 5">
+            <div class="product-info">
+                <h3>Producto 5</h3>
+                <p>Descripción del producto</p>
+                
+            </div>
         </div>
-        <div class="form-group">
-            <label for="numero_tarjeta">Número de Tarjeta:</label>
-            <input type="text" id="numero_tarjeta" name="numero_tarjeta" pattern="[0-9]{16}" required>
+        <div class="product">
+            <img src="../Media/img/0026.png" alt="Producto 6">
+            <div class="product-info">
+                <h3>Producto 6</h3>
+                <p>Descripción del producto</p>
+                
+            </div>
         </div>
-        <div class="form-group">
-            <label for="ccv">CCV:</label>
-            <input type="text" id="ccv" name="ccv" pattern="[0-9]{3}" required>
+        <div class="product">
+
         </div>
-        <div class="form-group">
-            <label for="numero_cuotas">Número de Cuotas:</label>
-            <select id="numero_cuotas" name="numero_cuotas">
-                <?php
-                for ($i = 1; $i <= 36; $i++) {
-                    echo "<option value='$i'>$i</option>";
-                }
-                ?>
-            </select>
+        <div class="product">
+
         </div>
-        <div class="form-group">
-            <button type="submit" name="pagar">Pagar</button>
-        </div>
-    </form>
+    </div>
+    <div  class="product-row">
+        <h1>Subtotal: </h1><br>
+    </div>
+    <div class="product-row">        
+        <h4>Gastos de envio:</h4>
+    </div>
+    <div class="product-row">      
+        <h4>Impuestos IVA: </h4>
+    </div>
+    <div class="product-row">        
+        <h2> Total:</h2>
+    </div>
 </div>
-
-
+ 
+    <div class="payment-form">
+        <h2>Formulario de Pago</h2>
+        <form action="procesar_pago.php" method="post">
+            <div class="form-group">
+                <label for="nombre_titular">Nombre del Titular:</label>
+                <input type="text" id="nombre_titular" name="nombre_titular" required>
+            </div>
+            <div class="form-group">
+                <label for="numero_tarjeta">Número de Tarjeta:</label>
+                <input type="text" id="numero_tarjeta" name="numero_tarjeta" pattern="[0-9]{16}" required>
+            </div>
+            <div class="form-group">
+                <label for="ccv">CCV:</label>
+                <input type="text" id="ccv" name="ccv" pattern="[0-9]{3}" required>
+            </div>
+            <div class="form-group">
+                <label for="numero_cuotas">Número de Cuotas:</label>
+                <select id="numero_cuotas" name="numero_cuotas">
+                    <?php
+                    for ($i = 1; $i <= 36; $i++) {
+                        echo "<option value='$i'>$i</option>";
+                    }
+                    ?>
+                </select>
+            </div>
+            <div class="form-group">
+                <button type="submit" name="pagar">Pagar</button>
+            </div>
+        </form>
+    </div>
+</div>
+</div>
 
 
 
