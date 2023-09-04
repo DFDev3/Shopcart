@@ -94,7 +94,7 @@
     <div class="social-media">
         <a href="#"><img src="../Media/facebook.png" alt="Facebook"></a>
         <a href="#"><img src="../Media/twitter.png" alt="Twitter"></a>
-        <a href="#"><img src="../Media/instagram.png" alt="Instagram"></a>
+        <a link="https://www.instagram.com/denis.fedi/"><img src="../Media/instagram.png" alt="Instagram"></a>
     </div>
 </footer>
 </body>

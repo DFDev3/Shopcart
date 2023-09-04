@@ -77,8 +77,9 @@
     </div>
     <div class="social-media">
         <a href="#"><img src="../Media/facebook.png" alt="Facebook"></a>
-        <a href="#"><img src="../Media/twitter.png" alt="Twitter"></a>
-        <a href="#"><img src="../Media/instagram.png" alt="Instagram"></a>
+        <a href="https://twitter.com/FateD_GG"><img src="../Media/twitter.png" alt="Twitter"></a>
+        <a href="https://www.instagram.com/denis.fedi/"><img src="../Media/instagram.png" alt="Instagram"></a>
+
     </div>
 </footer>
 </body>

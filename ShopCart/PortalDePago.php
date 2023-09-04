@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../Styles/shopcart.css">
+    <link rel="stylesheet" href="../Styles/PortalDePago.css">
     <script src="../Styles/shopcart.js"></script>
     <title>MotoGearPro</title>
 </head>
@@ -48,7 +48,7 @@
         <li><a href="ofertas.php">Ofertas</a></li>
     </ul>
 </div>
-/* ESPACIO PARA FORMULARIO DE PAGO 
+
 <div class="payment-form">
     <h2>Formulario de Pago</h2>
     <form action="procesar_pago.php" method="post">
@@ -84,16 +84,6 @@
 
 
 
-
-
-
-
-
-
-
-/*FIN DE ESPACIO PARA FORMULARIO
-
-
 <footer class="footer">
     <div class="contact-info">
         <p>Teléfono de contacto: (123) 456-7890</p>
@@ -101,8 +91,8 @@
     </div>
     <div class="social-media">
         <a href="#"><img src="../Media/facebook.png" alt="Facebook"></a>
-        <a href="#"><img src="../Media/twitter.png" alt="Twitter"></a>
-        <a href="#"><img src="../Media/instagram.png" alt="Instagram"></a>
+        <a href="https://twitter.com/FateD_GG"><img src="../Media/twitter.png" alt="Twitter"></a>
+        <a href="https://www.instagram.com/denis.fedi/"><img src="../Media/instagram.png" alt="Instagram"></a>
     </div>
 </footer>
 </body>
