@@ -48,29 +48,42 @@
         <li><a href="ofertas.php">Ofertas</a></li>
     </ul>
 </div>
+
 <div class="product-catalog">
     <div class="product-row">
-        <div class="product">
-            <img src="../Media/img/0033.png" alt="Producto 1">
-            <div class="product-info">
-                <h3>Producto 1</h3>
-                <p>Descripción del producto</p>
-                <button class="add-to-cart" data-product-id="1">Agregar al carrito</button>
-            </div>
-        </div>
-        <div class="product">
-            <img src="../Media/img/0034.png" alt="Producto 2">
-            <div class="product-info">
-                <h3>Producto 2</h3>
-                <p>Descripción del producto</p>
-                <button class="add-to-cart" data-product-id="2">Agregar al carrito</button>
-            </div>
-        </div>
-        <div class="product">
-        </div>
-        <div class="product">   
-        </div>
+        <?php
+        require_once '/xampp/htdocs/backend/Shopcart/Classes/Product.php';
+        require_once '/xampp/htdocs/backend/Shopcart/Classes/ProdArray.php';
 
+        $aux = new Products();
+        $aux->addProduct(new Product("lonita", 2100000, "../Media/img/0028.png", 10), 0);
+        $aux->addProduct(new Product("funda pal celular", 564000, "../Media/img/0029.png", 20), 1);
+        $aux->addProduct(new Product("otra", 60000, "../Media/img/0030.png", 2), 2);
+        $aux->addProduct(new Product("otra pero carisima", 2300000, "../Media/img/0031.png", 4), 3);
+
+
+        $productos = $aux->getProducts();
+        file_put_contents('cart.php', '<?php return ' . var_export($productos, true) . ';');
+        foreach ($productos as $valor) {
+            ?>
+                <div class="product">
+                <img src="<?php echo "{$valor->getImg()}"; ?>" alt="Producto 1">
+                <div class="product-info">
+                    <h3><?php echo "{$valor->getName()}"; ?></h3>
+                    <p><?php echo "{$valor->getPrice()}"; ?></p>
+                    <button class="add-to-cart" data-product-id="1">Agregar al carrito</button>
+                </div>
+            </div>
+            <?php
+        }
+        ?>
+
+    </div>
+</div>
+
+
+    <div>
+        <img src="/Media/canasta de compra.png" alt="">
     </div>
 </div>
 <footer class="footer">
