@@ -5,20 +5,62 @@ class Product
     private string $name;
     private float $price;
     private string $img;
-    
-
     private string $categoria;
+    private string $distribuidor;
+    private string $marca;
 
 
-    public function __construct($name, $price, $img,$categoria)
+    
+    public function __construct($name, $price, $img,$categoria,$distribuidor,$marca)
     {
         $this->name = $name;
         $this->price = $price;
         $this->img = $img;
-        
         $this->categoria=$categoria;
+        $this->marca=$marca;
+        $this->distribuidor=$distribuidor;
+    }
+    
+    /**
+     * Get the value of marca
+     */
+    public function getMarca()
+    {
+        return $this->marca;
     }
 
+    /**
+     * Set the value of name
+     *
+     * @return  self
+     */
+    public function setMarca($marca)
+    {
+        $this->marca = $marca;
+
+        return $this;
+    }
+    
+    /**
+     * Get the value of distribuidor
+     */
+    public function getDistribuidor()
+    {
+        return $this->distribuidor;
+    }
+
+    /**
+     * Set the value of name
+     *
+     * @return  self
+     */
+    public function setDistribuidor($distribuidor)
+    {
+        $this->distribuidor = $distribuidor;
+
+        return $this;
+    }
+    
     public function getCategoria(){
         return $this->categoria;
     }
@@ -97,7 +139,7 @@ class Product
 
     public static function __set_state($data)
     {
-        $product = new Product('', 1, '','00');
+        $product = new Product('', 1, '','00','','');
         foreach ($data as $key => $value) {
             $product->$key = $value;
         }
