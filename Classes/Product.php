@@ -7,20 +7,33 @@ class Product
     private string $img;
     private int $stock;
 
+    private string $categoria;
 
-    public function __construct($name, $price, $img, $stock)
+
+    public function __construct($name, $price, $img, $stock,$categoria)
     {
         $this->name = $name;
         $this->price = $price;
         $this->img = $img;
         $this->stock = $stock;
+        $this->categoria=$categoria;
     }
 
+    public function getCategoria(){
+        return $this->categoria;
+    }
 
+    /**
+     * Set the value of categoria
+     *
+     * @return  self
+     */
+    public function setCategoria($categoria)
+    {
+        $this->categoria = $categoria;
 
-
-
-
+        return $this;
+    }
 
     /**
      * Get the value of name
@@ -84,7 +97,7 @@ class Product
 
     public static function __set_state($data)
     {
-        $product = new Product('', 1, '', 0);
+        $product = new Product('', 1, '', 0,'00');
         foreach ($data as $key => $value) {
             $product->$key = $value;
         }
