@@ -64,74 +64,34 @@
     </div>
     <div class="product-catalog">
         <div class="product-row">
-            <div class="product">
-                <img src="../Media/img/0004.png" alt="Producto 1">
+        <?php
+
+        require_once '../Classes/ProdArray.php';
+        require_once '../Classes/Product.php';
+
+        $aux = new Products();
+
+        $aux->addProduct(new Product("Aceite", 2100000, "../Media/img/0001.png", 10), 0);
+        $aux->addProduct(new Product("Más aceite", 564000, "../Media/img/0002.png", 20), 1);
+        $aux->addProduct(new Product("Otro aceite", 60000, "../Media/img/0003.png", 2), 2);
+        $aux->addProduct(new Product("Ya ahora si el ultimo aceite", 2300000, "../Media/img/0004.png", 4), 3);
+
+        $productos = $aux->getProducts();
+        foreach ($productos as $valor) {
+        ?>
+                <div class="product">
+                <img src="<?php echo "{$valor->getImg()}"; ?>" alt="Producto 1">
                 <div class="product-info">
-                    <h3>Producto 1</h3>
-                    <p>Descripción del producto</p>
+                    <h3><?php echo "{$valor->getName()}"; ?></h3>
+                    <p><?php echo "{$valor->getPrice()}"; ?></p>
                     <button class="add-to-cart" data-product-id="1">Agregar al carrito</button>
                 </div>
             </div>
-            <div class="product">
-                <img src="../Media/img/0032.png" alt="Producto 2">
-                <div class="product-info">
-                    <h3>Producto 2</h3>
-                    <p>Descripción del producto</p>
-                    <button class="add-to-cart" data-product-id="2">Agregar al carrito</button>
-                </div>
-            </div>
-            <div class="product">
-                <img src="../Media/img/0011.png" alt="Producto 3">
-                <div class="product-info">
-                    <h3>Producto 3</h3>
-                    <p>Descripción del producto</p>
-                    <button class="add-to-cart" data-product-id="3">Agregar al carrito</button>
-                </div>
-            </div>
-            <div class="product">
-                <img src="../Media/img/0042.png" alt="Producto 4">
-                <div class="product-info">
-                    <h3>Producto 4</h3>
-                    <p>Descripción del producto</p>
-                    <button class="add-to-cart" data-product-id="4">Agregar al carrito</button>
-                </div>
-            </div>
 
-        </div>
-        <div class="product-row">
-            <div class="product">
-                <img src="../Media/img/0034.png" alt="Producto 5">
-                <div class="product-info">
-                    <h3>Producto 5</h3>
-                    <p>Descripción del producto</p>
-                    <button class="add-to-cart" data-product-id="5">Agregar al carrito</button>
-                </div>
-            </div>
-            <div class="product">
-                <img src="../Media/img/0022.png" alt="Producto 6">
-                <div class="product-info">
-                    <h3>Producto 6</h3>
-                    <p>Descripción del producto</p>
-                    <button class="add-to-cart" data-product-id="6">Agregar al carrito</button>
-                </div>
-            </div>
-            <div class="product">
-                <img src="../Media/img/0016.png" alt="Producto 7">
-                <div class="product-info">
-                    <h3>Producto 7</h3>
-                    <p>Descripción del producto</p>
-                    <button class="add-to-cart" data-product-id="7">Agregar al carrito</button>
-                </div>
-            </div>
-            <div class="product">
-                <img src="../Media/img/0007.png" alt="Producto 8">
-                <div class="product-info">
-                    <h3>Producto 8</h3>
-                    <p>Descripción del producto</p>
-                    <button class="add-to-cart" data-product-id="8">Agregar al carrito</button>
-                </div>
-            </div>
-
+        <?php
+        }
+        ?>
+        
         </div>
     </div>
 </div>
