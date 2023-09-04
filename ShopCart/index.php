@@ -10,7 +10,7 @@
 <body>
         <div class="navbar">
             <div class="logo">
-                <a href="index.html">
+                <a href="index.php">
                     <img src="../Media/LogoTienda3.1.png" alt="Logo">
                 </a>
                 
@@ -22,7 +22,7 @@
                     <a href="#">Contactenos</a>
                 </div>
                 <div class="shopcart">
-                    <a href="shopCart.html">
+                    <a href="shopCart.php">
                         <img src="../Media/canasta de compra.png" alt="Carrito">
 
                         <span class="cart-counter">0</span>
@@ -40,16 +40,16 @@
     </div>
     <div class="second-navbar">
         <ul>
-            <li><a href="Cascos.html">Cascos</a></li>
-            <li><a href="Accesorios.html">Accesorios</a></li>
-            <li><a href="Intercomunicadores.html">Intercomunicadores</a></li>
-            <li><a href="Aceites.html">Aceites</a></li>
-            <li><a href="llantas.html">Llantas</a></li>
-            <li><a href="maletas.html">Maletas</a></li>
-            <li><a href="soportes.html">Soportes</a></li>
-            <li><a href="exploradoras.html">Exploradoras</a></li>
-            <li><a href="botas.html">Botas</a></li>
-            <li><a href="ofertas.html">Ofertas</a></li>
+            <li><a href="Cascos.php">Cascos</a></li>
+            <li><a href="Accesorios.php">Accesorios</a></li>
+            <li><a href="Intercomunicadores.php">Intercomunicadores</a></li>
+            <li><a href="Aceites.php">Aceites</a></li>
+            <li><a href="llantas.php">Llantas</a></li>
+            <li><a href="maletas.php">Maletas</a></li>
+            <li><a href="soportes.php">Soportes</a></li>
+            <li><a href="exploradoras.php">Exploradoras</a></li>
+            <li><a href="botas.php">Botas</a></li>
+            <li><a href="ofertas.php">Ofertas</a></li>
         </ul>
     </div>
     
