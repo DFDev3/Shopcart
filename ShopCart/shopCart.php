@@ -56,16 +56,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['eliminar'])) {
 </div>
 <div class="second-navbar">
     <ul>
-        <li><a href="Cascos.php">Cascos</a></li>
-        <li><a href="Accesorios.php">Accesorios</a></li>
-        <li><a href="Intercomunicadores.php">Intercomunicadores</a></li>
-        <li><a href="Aceites.php">Aceites</a></li>
-        <li><a href="llantas.php">Llantas</a></li>
-        <li><a href="maletas.php">Maletas</a></li>
-        <li><a href="soportes.php">Soportes</a></li>
-        <li><a href="exploradoras.php">Exploradoras</a></li>
-        <li><a href="botas.php">Botas</a></li>
-        <li><a href="ofertas.php">Ofertas</a></li>
+        <li><a href="index.php">INICIO</a></li>
+        <li><a href="index.php?categoria=01">Cascos</a></li>
+        <li><a href="index.php?categoria=02">Accesorios</a></li>
+        <li><a href="index.php?categoria=03">Intercomunicadores</a></li>
+        <li><a href="index.php?categoria=04">Aceites</a></li>
+        <li><a href="index.php?categoria=05">Llantas</a></li>
+        <li><a href="index.php?categoria=06">Maletas</a></li>
+        <li><a href="index.php?categoria=07">Soportes</a></li>
+        <li><a href="index.php?categoria=08">Exploradoras</a></li>
+        <li><a href="index.php?categoria=09">Ropa</a></li>
     </ul>
 </div>
 <div class="carritoCompra">
@@ -76,7 +76,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['eliminar'])) {
         <div class="product-row">
 
         <?php             
-
+        $total=0;
         if (!empty($_SESSION['carrito'])) {
             
             foreach ($_SESSION['carrito'] as $key => $valor) {
@@ -86,7 +86,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['eliminar'])) {
                 <img src="<?php echo $valor['urlImg']; ?>" alt="Producto">
                     <div class="product-info">
                         <h3><?php echo $valor['nombre']; ?></h3>
-                        <p>$<?php echo number_format($valor['precio'], 2, ',', '.'); ?></p>
+                        <p><?php echo number_format($valor['precio'], 2, ',', '.'); 
+                        $total=$total+$valor['precio'];?></p>
+                        
                         <form method="post">
                             <input type="hidden" name="product_id" value=""<?php echo $key; ?>>                       
                             <button class="add-to-cart" data-product-id="1" type="submit" name="eliminar" >Eliminar</button>
@@ -109,7 +111,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['eliminar'])) {
 </div>
 <div class="cart">
     <div class="total">
-        <h3>Total del Carrito: $25.00</h3>
+        <h3>Total del Carrito: <?php echo number_format($total, 2, ',', '.')?></h3>
+
         <a href="PortalDePago.php">
             <button class="Pagar" >Pagar</button>
         </a>
