@@ -204,7 +204,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['agregar'])) {
         <p>Correo de contacto: info@example.com</p>
     </div>
     <div class="social-media">
-        <a href="#"><img src="../Media/facebook.png" alt="Facebook"></a>
+        <a href="https://github.com/DFDev3/Shopcart"><img src="../Media/GitHub-logo.png" alt="Facebook"></a>
         <a href="https://twitter.com/FateD_GG"><img src="../Media/twitter.png" alt="Twitter"></a>
         <a href="https://www.instagram.com/denis.fedi/"><img src="../Media/instagram.png" alt="Instagram"></a>
     </div>
