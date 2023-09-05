@@ -217,6 +217,7 @@ body {
     justify-content: space-between;
     flex-wrap: wrap;
     margin-bottom: 20px;
+    height: max-content;
 }
 
 .product {
@@ -251,7 +252,10 @@ body {
     padding: 10px;
     text-align: center;
     max-width: 300px;
+
+    /* orden que ajusta el tamaño automaticamente */
     margin: 0 auto;
+    
 
 }
 

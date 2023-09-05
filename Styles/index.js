@@ -29,3 +29,15 @@ addToCartButtons.forEach(function(button) {
         alert("Producto " + productId + " agregado al carrito.");
     });
 });
+
+    function mostrarImagen(src) {
+        var imagenAmpliada = document.getElementById('imagenAmpliada');
+        var imagenAmpliadaSrc = document.getElementById('imagenAmpliadaSrc');
+        imagenAmpliada.style.display = 'block';
+        imagenAmpliadaSrc.src = src;
+    }
+    function ocultarImagen() {
+        var imagenAmpliada = document.getElementById('imagenAmpliada');
+        imagenAmpliada.style.display = 'none';
+    }
+    
