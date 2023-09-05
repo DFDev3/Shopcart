@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../Styles/busqueda.css">
+    <link rel="stylesheet" href="../Styles/index.css">
     <script src="../Styles/index.js"></script>
     <title>MotoGearPro</title>
 </head>
@@ -77,7 +77,7 @@
            <?php
         
         } else{
-
+            $itemArray = $aux->getProducts();
             $busca=$_GET['busca'];
             echo $busca;
             ?>
@@ -86,21 +86,35 @@
            </div>
            <?php
 
-            // codigo que listara los productos segun la palabra que se busca
-            //foreach ($finalArray as $valor) {   
-                ?><!--
-                <div class="product">
-                    <img src="<?php echo "{$valor->getImg()}"; ?>" alt="Producto 1">
-                    <div class="product-info">
-                        <h3><?php echo "{$valor->getName()}"; ?></h3>
-                        <p>$<?php echo number_format($valor->getPrice(), 2, ',', '.'); ?></p>
-                        <button class="add-to-cart" data-product-id="1">Agregar al carrito</button>
-                    </div>
-                </div>-->
-
-              
-
-                <?php      
+                $matchingProducts = array();
+                    
+                foreach ($itemArray as $product) {
+                    // Convert both the product name and search query to lowercase for case-insensitive comparison.
+                    $productName = strtolower($product->getName());
+                    $busca = strtolower($busca);
+                    
+                    // Check if the search query is found in the product name.
+                    if (strpos($productName, $busca) !== false) {
+                        $matchingProducts[] = $product;
+                    }
+                }
+                
+                // Display the matching products.
+                if (count($matchingProducts) > 0) {
+                    echo "<h2>Productos encontrados:</h2>";
+                    foreach ($matchingProducts as $valor) {?>
+                        <div class="product">
+                        <img src="<?php echo "{$valor->getImg()}"; ?>" alt="Producto">
+                            <div class="product-info">
+                                <h3><?php echo "{$valor->getName()}"; ?></h3>
+                        </div>
+                                <p>$<?php echo number_format($valor->getPrice(), 2, ',', '.'); ?></p>}
+                    <?php
+                    }
+                } else {
+                    echo "<p>No encontramos productos.</p>";
+                }
+ 
             //}
         }           
         

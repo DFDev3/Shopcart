@@ -1,30 +1,3 @@
-<?php
-
-require '../Classes/init.php';
-
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (isset($_POST['addButton'])) {
-
-
-        $productName = $_POST['product_name'];
-        $productPrice = $_POST['product_price'];
-        $productImg = $_POST['product_img'];
-        $productCat = $_POST['product_cat'];
-        $productDis = $_POST['product_dis'];
-        $productBrand = $_POST['product_brand'];
-
-        echo "Added $productName to the cart!";
-
-        // $productToAdd = new Product($productName,$productPrice,$productImg,$productCat,$productDis,$productBrand);
-        $remoteCount = $remote->countProducts();
-        $remote->addProduct(new Product($productName,$productPrice,$productImg,$productCat,$productDis,$productBrand),$remoteCount+1);
-
-    }
-}
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -93,6 +66,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 <div class="content">
+
+
     <div class="product-catalog">
         <div class="product-row">
 
@@ -131,7 +106,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <div class="product-info">
                         <h3><?php echo "{$valor->getName()}"; ?></h3>
                         <p>$<?php echo number_format($valor->getPrice(), 2, ',', '.'); ?></p>
-                        <form method="post" action="process.php">
+                        <form method="post">
                             <input type="hidden" name="product_name" value="<?php echo "{$valor->getName()}"; ?>">
                             <input type="hidden" name="product_price" value="<?php echo "{$valor->getPrice()}"; ?>">
                             <input type="hidden" name="product_img" value="<?php echo "{$valor->getImg()}"; ?>">
@@ -157,6 +132,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </div>
                     <?php
                 } 
+            }
+        }
+
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            if (isset($_POST['addButton'])) {
+
+
+                $productName = $_POST['product_name'];
+                $productPrice = $_POST['product_price'];
+                $productImg = $_POST['product_img'];
+                $productCat = $_POST['product_cat'];
+                $productDis = $_POST['product_dis'];
+                $productBrand = $_POST['product_brand'];
+
+                // $productToAdd = new Product($productName,$productPrice,$productImg,$productCat,$productDis,$productBrand);
+                $_SESSION['CarritoSesion']->agregarProducto(new Product($productName,$productPrice,$productImg,$productCat,$productDis,$productBrand));
+                print_r($_SESSION['CarritoSesion']);
+                echo "<br><br><br>";
+                print_r($_POST);
             }
         }
         ?>

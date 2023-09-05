@@ -1,10 +1,10 @@
 <?php
 class Cart
 {
-    private $productos = array();
+    public $productos = array();
 
     public function agregarProducto($producto)
-    {
+    {   
         $this->productos[] = $producto;
     }
 

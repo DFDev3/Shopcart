@@ -382,10 +382,14 @@ body {
     right: 0;
     height: 10%;
     z-index: 2;
+    width: 100%;
 }
-
+.logo{
+    width: 10%;
+    margin-right: 4%;
+}
 .logo img {
-    max-width:10%;
+    max-width:100%;
     height: auto;
     padding-left: 30%;
 }
@@ -394,10 +398,7 @@ body {
 .nav-items {
     display: flex;
     align-items:center;
-    flex-direction: column;
-    margin-left: auto;
-    width: fit-content;
-    padding-right:  10%;
+    width: 20%;
     margin-top: 0%;
     padding-top: 0%;
      /* Hace que los elementos ocupen el espacio restante */
@@ -416,8 +417,6 @@ body {
     margin-right: 20px;
     padding-right: 10px;
     width: fit-content;
-
-
 }
 .shopcart{
     
@@ -458,19 +457,26 @@ body {
 .bottom-nav {
     display: flex;
     align-items: center;
+    width: 60%;
 }
 
 /* Barra de búsqueda */
 .search-box {
     display: flex;
     align-items: center;
+    justify-content: flex-end;
+    width: 100%;
 }
 
 .search-box input[type="text"] {
-    padding: 5px;
+    padding: 15px;
     border: none;
     border-radius: 10px;
     margin-right: 10px;
+    width: 60%;
+    font-size: large;
+    font-family: Abandon;
+    
 }
 
 .search-box button {
@@ -478,10 +484,12 @@ body {
     color: #fff;
     border: none;
     border-radius: 5px;
-    padding: 5px 10px;
+    padding: 15px 30px;
     cursor: pointer;
     align-content: center;
     align-items: center;
+    font-size: large;
+    font-family: Abandon;
 }
 .second-navbar {
     background-color: #000;
@@ -501,6 +509,7 @@ body {
 .second-navbar ul {
     list-style-type: none;
     padding: 0;
+    margin-top: 20px;
     margin-top: 20px;
     display: flex;
     justify-content: space-around;
@@ -543,10 +552,44 @@ body {
     }
 }
 
+/* Estilos para el icono del menú (hamburguesa) */
+.menu-icon {
+    display: block; /* Ocultar el icono del menú por defecto */
+    font-size: 24px;
+    cursor: pointer;
+    margin-right: 20px;
+    margin-top: 10px;
+}
+
+/* Media query para dispositivos con un ancho de pantalla máximo de 768px */
+@media screen and (max-width: 768px) {
+    .second-navbar {
+        display: block; /* Mostrar la segunda barra de navegación */
+        margin-top: 0; /* Reiniciar el margen superior */
+        padding: 10px 20px;
+    }
+
+    .second-navbar ul {
+        flex-direction: column; /* Mostrar los elementos en una columna */
+        align-items: center; /* Centrar los elementos */
+    }
+
+    .menu-icon {
+        display: block; /* Mostrar el icono del menú (hamburguesa) */
+    }
+}
+
 /* Contenido de la página */
 .content {
     margin-top: 120px; /* Espacio para la segunda barra */
     padding: 20px;
+}
+
+/* Contenido de la página de Busqueda*/
+.contentBusqueda {
+    margin-top: 120px; /* Espacio para la segunda barra */
+    padding: 20px;
+    height: 70%;
 }
 
 /* Estilos para el carrusel de anuncios */
@@ -559,9 +602,10 @@ body {
     min-height: 50vh;/* Ancho máximo del contenedor */
     max-height: 60vh; /* Altura máxima del contenedor (40% de la altura de la ventana) */
     overflow: hidden;
-    
     margin: 0 auto; /* Centra horizontalmente */
     margin-top: 5%;
+    
+    margin-bottom: 5%;
 }
 
 .ad-slideshow {
@@ -569,7 +613,7 @@ body {
     overflow: hidden;
     position: relative;
     align-items: center;
-    justify-content: center;
+    
     height: 100%; /* Ajusta el contenedor para centrar verticalmente las imágenes */
 }
 
@@ -587,6 +631,7 @@ body {
     max-width: 100%; /* Establece un ancho máximo del 100% */
     height: auto; /* La altura se ajusta automáticamente para mantener la relación de aspecto original */
     max-height: 200px;
+
 
 }
 

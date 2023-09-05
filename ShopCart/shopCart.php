@@ -60,13 +60,20 @@
         <?php
 
         require_once '../Classes/init.php';
-        $carrito = $remote->getProducts();
+        require_once '../Classes/Product.php';
+        require_once '../Classes/Cart.php';
 
-        print_r($carrito);
-        echo "holaaaaaaaaaaaaaa";
-        print_r($remote);
+        print_r($_SESSION['CarritoSesion']);
+
+        if (isset($_SESSION['CarritoSesion'])) {
+            $carritoCase = $_SESSION['CarritoSesion'];
+        }
+        print_r($carritoCase);
         
-        foreach ($carrito as $valor) {
+        $carritoFinal = $carritoCase->obtenerProductos();
+
+        
+        foreach ($carritoFinal as $valor) {
             ?>
                 <div class="product">
                 <img src="<?php echo "{$valor->getImg()}"; ?>" alt="Producto">
