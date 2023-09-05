@@ -1,3 +1,23 @@
+<?php
+session_start(); // Iniciar la sesión
+
+if (isset($_SESSION['carrito'])!=1) {
+    $_SESSION['carrito']=[];
+}
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['eliminar'])) {
+    // Verificar si se ha enviado un formulario para eliminar un producto del carrito
+    $producto_id = $_POST['producto_id'];
+    
+    // Eliminar el producto del carrito por su índice
+    unset($_SESSION['carrito'][$producto_id]);
+    
+    // Reindexar el arreglo para evitar índices vacíos
+    $_SESSION['carrito'] = array_values($_SESSION['carrito']);
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -51,49 +71,42 @@
 <div class="carritoCompra">
     <h2>Carrito de Compra</h2>
 </div>
-    <!-- Vista del carrito de compra -->
-    <div class="cart">
+<div class="content">
+<div class="product-catalog">
+        <div class="product-row">
 
-        <!-- Repite estos elementos para cada artículo en el carrito -->
-        <div class="cart-item">
-        
-        <?php
+        <?php             
 
-        require_once '../Classes/init.php';
-        require_once '../Classes/Product.php';
-        require_once '../Classes/Cart.php';
-
-        print_r($_SESSION['CarritoSesion']);
-
-        if (isset($_SESSION['CarritoSesion'])) {
-            $carritoCase = $_SESSION['CarritoSesion'];
-        }
-        print_r($carritoCase);
-        
-        $carritoFinal = $carritoCase->obtenerProductos();
-
-        
-        foreach ($carritoFinal as $valor) {
-            ?>
+        if (!empty($_SESSION['carrito'])) {
+            
+            foreach ($_SESSION['carrito'] as $key => $valor) {
+                
+                ?>
                 <div class="product">
-                <img src="<?php echo "{$valor->getImg()}"; ?>" alt="Producto">
+                <img src="<?php echo $valor['urlImg']; ?>" alt="Producto">
                     <div class="product-info">
-                        <h3><?php echo "{$valor->getName()}"; ?></h3>
-                        <p><?php echo "{$valor->getPrice()}"; ?></p>
+                        <h3><?php echo $valor['nombre']; ?></h3>
+                        <p>$<?php echo number_format($valor['precio'], 2, ',', '.'); ?></p>
+                        <form method="post">
+                            <input type="hidden" name="product_id" value=""<?php echo $key; ?>>                       
+                            <button class="add-to-cart" data-product-id="1" type="submit" name="eliminar" >Eliminar</button>
+                        </form>
                     </div>
-            </div>
-
+                </div>
+                <?php
+            }
+        }else{
+            ?>
+                <div class="content"></div>
+                <h1 >El carrito esta vacio</h1>
             <?php
         }
+              
         ?>
+        
         </div>
-
     </div>
-
-
-
-
-
+</div>
 <div class="cart">
     <div class="total">
         <h3>Total del Carrito: $25.00</h3>
