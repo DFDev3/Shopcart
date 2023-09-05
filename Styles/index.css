@@ -139,9 +139,10 @@ body {
     top: 0;
     left: 0;
     right: 0;
+
     display:flexbox;
     width: 100%;
-  
+
 }
 
 .second-navbar ul {
@@ -247,10 +248,7 @@ body {
 
 .product-info {
     margin-top: 10px;
-
-    text-align: center;
 }
-
 .product-catalog {
     padding: 20px;
     max-width: 100%;
@@ -305,6 +303,7 @@ body {
     cursor: pointer;
     margin-bottom: 20px;
 }
+
 
 
 
@@ -616,6 +615,8 @@ body {
     cursor: pointer;
     margin-bottom: 20px;
 }
+
+
 
 
 /* Estilos para el footer */
