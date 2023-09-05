@@ -14,6 +14,10 @@ function validarFormulario() {
         // Procesar el pago aquí (simulación)
         var totsend = document.getElementById("totsend").value;
         alert("Pago completado. Total a pagar: $" + totsend);
-        return true; // Permite que el formulario se envíe
+
+        // Redirigir a index.php después de mostrar el mensaje de éxito
+        window.location.href = "index.php";
+
+        return false; // Evita que el formulario se envíe
     }
 }
