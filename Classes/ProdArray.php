@@ -1,8 +1,6 @@
 <?php
 
-class Products
-{
-
+class Products{
     private $products = array();
     public function getProducts()
     {
@@ -28,7 +26,16 @@ class Products
 
         return $this;
     }
-
+    
+    public function countProducts() {
+        $count = 0;
+        foreach ($this->products as $product) {
+            if ($product instanceof Product) {
+                $count++;
+            }
+        }
+        return $count;
+    }
 }
 
 
