@@ -20,6 +20,8 @@ class Product
         $this->marca=$marca;
         $this->distribuidor=$distribuidor;
     }
+
+    
     
     /**
      * Get the value of marca

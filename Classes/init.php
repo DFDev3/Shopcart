@@ -59,7 +59,8 @@ $aux->addProduct(new Product("Llanta 291/42/05 para 1000 cc en adelante", 800000
 $productos = $aux->getProducts();
 file_put_contents('cart.php', '<?php return ' . var_export($productos, true) . ';');
 
-
 //final
+
+$remote = new Products();
 
 ?>
