@@ -107,7 +107,33 @@
         ?>
         
         </div>
+        <div  class="product-row">
+        <h1>Subtotal: $<span id="subt"><?php
+        $iva=0.19;
+        $subt=$total-($total*$iva);
+        echo number_format($subt, 2, ',', '.'); 
+        ?></span></h1><br>
     </div>
+    <div class="product-row">        
+        <h4>Gastos de envio: $10000</h4>
+    </div>
+    <div class="product-row">      
+        <h4>Impuestos IVA: $<span id="iva">
+        <?php
+        $valiva =$total*$iva;
+        echo number_format($valiva, 2, ',', '.'); 
+        ?>
+        </span></h4>
+    </div>
+    <div class="product-row">        
+        <h2> Total: $<span id="total"><?php
+        $totenvio=$total+10000;
+        echo number_format($totenvio, 2, ',', '.'); 
+        ?></span></h2>
+    </div>
+    </div>
+
+    
 </div>
  
     <div class="payment-form">
@@ -190,7 +216,20 @@
 var subt = 0;
 var iva = 0.19;
 var valiva = 0;
-var total = 0;
+var total = <?php
+// Verifica si el parámetro 'total' está presente en la URL
+if (isset($_GET['total'])) {
+    // Obtiene el valor de 'total' y lo asigna a la variable $total
+    $total = $_GET['total'];
+
+    // Ahora, $total contiene el valor pasado en la URL
+    echo "El valor de total es: " . $total;
+} else {
+    // Si 'total' no está presente en la URL, puedes proporcionar un valor predeterminado
+    $total = 0;
+    echo "Total no especificado en la URL. Usando valor predeterminado: " . $total;
+}
+?>;
 var totenvio = 0;
 function actualizarSubtotal() {
     //CALCULOS NECESARIOS PARA EL SUBTOTAL

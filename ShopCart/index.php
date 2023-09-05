@@ -196,6 +196,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['agregar'])) {
         
         </div>
     </div>
+
+    
 </div>
 
 <footer class="footer">

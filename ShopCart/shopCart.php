@@ -113,7 +113,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['eliminar'])) {
     <div class="total">
         <h3>Total del Carrito: <?php echo number_format($total, 2, ',', '.')?></h3>
         <div>
-        <a href="PortalDePago.php?ids=<?php echo urlencode(implode(',', $ids)); ?>">
+        <a href="PortalDePago.php?ids=<?php echo urlencode(implode(',', $ids)); ?>&total=<?php echo $total; ?>">
                 <button class="Pagar" >Pagar</button>
             </a>
         </div>
