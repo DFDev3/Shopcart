@@ -1,33 +1,24 @@
-window.addEventListener("load", function () {
-    const adImages = document.querySelectorAll(".ad-slideshow img");
-    let currentIndex = 0;
+window.addEventListener('scroll', function() {
+    const secondNavbar = document.querySelector('.second-navbar');
+    const navbar = document.querySelector('.navbar');
+    const navbarHeight = navbar.offsetHeight;
 
-    function showNextImage() {
-        // Oculta la imagen actual
-        adImages[currentIndex].style.display = "none";
-
-        // Incrementa el índice y asegura que esté dentro del rango válido
-        currentIndex = (currentIndex + 1) % adImages.length;
-
-        // Muestra la siguiente imagen
-        adImages[currentIndex].style.display = "block";
+    if (window.scrollY >= navbarHeight) {
+        secondNavbar.style.transform = `translateY(${navbarHeight}px)`;
+    } else {
+        secondNavbar.style.transform = 'translateY(0)';
     }
-
-    // Inicializa la presentación de diapositivas
-    showNextImage();
-
-    // Configura un intervalo para cambiar las imágenes cada 3 segundos
-    setInterval(showNextImage, 3000);
 });
+const secondNavbar = document.querySelector('.second-navbar');
+const navbar = document.querySelector('.navbar');
+const navbarHeight = navbar.offsetHeight;
 
-const addToCartButtons = document.querySelectorAll(".add-to-cart");
-
-addToCartButtons.forEach(function(button) {
-    button.addEventListener("click", function() {
-        const productId = button.getAttribute("data-product-id");
-        // Aquí puedes agregar lógica para agregar el producto al carrito (por ejemplo, con una función AJAX)
-        alert("Producto " + productId + " agregado al carrito.");
-    });
+window.addEventListener('scroll', function() {
+    if (window.scrollY >= navbarHeight) {
+        secondNavbar.style.zIndex = 3; // Poner la segunda barra por encima de la principal
+    } else {
+        secondNavbar.style.zIndex = 1; // Poner la segunda barra por debajo de la principal
+    }
 });
 
     function mostrarImagen(src) {
