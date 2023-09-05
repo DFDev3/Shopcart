@@ -55,11 +55,6 @@
         require_once '/xampp/htdocs/backend/Shopcart/Classes/Product.php';
         require_once '/xampp/htdocs/backend/Shopcart/Classes/ProdArray.php';
 
-        $aux = new Products();
-        $aux->addProduct(new Product("lonita", 2100000, "../Media/img/0028.png", 10), 0);
-        $aux->addProduct(new Product("funda pal celular", 564000, "../Media/img/0029.png", 20), 1);
-        $aux->addProduct(new Product("otra", 60000, "../Media/img/0030.png", 2), 2);
-        $aux->addProduct(new Product("otra pero carisima", 2300000, "../Media/img/0031.png", 4), 3);
 
 
         $productos = $aux->getProducts();

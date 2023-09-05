@@ -51,7 +51,10 @@ $aux->addProduct(new Product("Llanta 213/32/20 para 300 cc en adelante", 450000.
 $aux->addProduct(new Product("Llanta 243/13/09 para 350 cc en adelante", 600000.0, "../Media/img/0043.png", '05', 'MotoPartes Express', 'Michellin'), 43);
 $aux->addProduct(new Product("Llanta 214/23/04 para 250 cc en adelante", 700000.0, "../Media/img/0044.png", '05', 'MotoPartes Express', 'Michellin'), 44);
 $aux->addProduct(new Product("Llanta 291/42/05 para 1000 cc en adelante", 800000.0, "../Media/img/0045.png", '05', 'MotoPartes Express', 'Michellin'), 45);
-
+$aux->addProduct(new Product("Patito Acompañante", 28000.0, "../Media/img/0047.png", '10', 'MotoPartes Express', 'Ball8'), 47);
+$aux->addProduct(new Product("Doraemon Acompañante", 29000.0, "../Media/img/0048.png", '10', 'MotoPartes Express', 'Ball8'), 48);
+$aux->addProduct(new Product("Forro para Casco", 34000.0, "../Media/img/0049.png", '10', 'MotoPartes Express', 'XiaXia'), 49);
+$aux->addProduct(new Product("Cubierta para motor", 40500.0, "../Media/img/0050.png", '10', 'MotoPartes Express', 'Taurus'), 50);
 //hola 1
 
 $productos = $aux->getProducts();
