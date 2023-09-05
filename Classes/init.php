@@ -7,7 +7,7 @@ require '/xampp/htdocs/backend/Shopcart/Classes/ProdArray.php';
 
 
 $aux = new Products();
-//$aux->addProduct(new Product("(Nombre)", (precio), "../Media/img/(ID de imagen)", '00', Distribuidor, Marca), 0);
+//$aux->addProduct(new Product("(Nombre)", (precio), "../Media/img/(ID de imagen)", '(categoria)', '(Distribuidor)', '(Marca)'), 0);
 $aux->addProduct(new Product("Aceite1", 2100000, "../Media/img/0001.png", '00','Eni','Mazda'), 0);
 //ponerlo a partir de aqui
 
