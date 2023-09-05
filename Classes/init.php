@@ -1,7 +1,10 @@
 <?php
 
+session_start();
+
 require 'Product.php';
 require 'ProdArray.php';
+require 'Cart.php';
 
 
 $aux = new Products();
@@ -62,6 +65,10 @@ file_put_contents('cart.php', '<?php return ' . var_export($productos, true) . '
 
 //final
 
-$remote = new Products();
+if (!isset($carrito)) {
+    $carrito = new Cart();
+    $_SESSION['CarritoSesion'] = $carrito; // Initialize the shopping cart only once.
+}
+
 
 ?>

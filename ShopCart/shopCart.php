@@ -58,9 +58,15 @@
         <div class="cart-item">
         
         <?php
+        session_start();
 
         require_once '../Classes/init.php';
-        $carrito = $remote->getProducts();
+        require_once '../Classes/Product.php';
+        require_once '../Classes/Cart.php';
+
+        $carritoCase = $_SESSION['CarritoSesion'];
+        $carritofinal = $carritoCase->obtenerProductos();
+
 
         print_r($carrito);
         echo "holaaaaaaaaaaaaaa";
