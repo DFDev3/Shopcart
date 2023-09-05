@@ -404,4 +404,40 @@
      'distribuidor' => 'MotoPartes Express',
      'marca' => 'Michellin',
   )),
+  47 => 
+  \Product::__set_state(array(
+     'name' => 'Patito Acompañante',
+     'price' => 28000.0,
+     'img' => '../Media/img/0047.png',
+     'categoria' => '10',
+     'distribuidor' => 'MotoPartes Express',
+     'marca' => 'Ball8',
+  )),
+  48 => 
+  \Product::__set_state(array(
+     'name' => 'Doraemon Acompañante',
+     'price' => 29000.0,
+     'img' => '../Media/img/0048.png',
+     'categoria' => '10',
+     'distribuidor' => 'MotoPartes Express',
+     'marca' => 'Ball8',
+  )),
+  49 => 
+  \Product::__set_state(array(
+     'name' => 'Forro para Casco',
+     'price' => 34000.0,
+     'img' => '../Media/img/0049.png',
+     'categoria' => '10',
+     'distribuidor' => 'MotoPartes Express',
+     'marca' => 'XiaXia',
+  )),
+  50 => 
+  \Product::__set_state(array(
+     'name' => 'Cubierta para motor',
+     'price' => 40500.0,
+     'img' => '../Media/img/0050.png',
+     'categoria' => '10',
+     'distribuidor' => 'MotoPartes Express',
+     'marca' => 'Taurus',
+  )),
 );

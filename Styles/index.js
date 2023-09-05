@@ -20,3 +20,15 @@ window.addEventListener('scroll', function() {
         secondNavbar.style.zIndex = 1; // Poner la segunda barra por debajo de la principal
     }
 });
+
+    function mostrarImagen(src) {
+        var imagenAmpliada = document.getElementById('imagenAmpliada');
+        var imagenAmpliadaSrc = document.getElementById('imagenAmpliadaSrc');
+        imagenAmpliada.style.display = 'block';
+        imagenAmpliadaSrc.src = src;
+    }
+    function ocultarImagen() {
+        var imagenAmpliada = document.getElementById('imagenAmpliada');
+        imagenAmpliada.style.display = 'none';
+    }
+    
