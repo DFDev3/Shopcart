@@ -80,9 +80,9 @@
         if (!empty($ids)){
             foreach ($ids as $producto_id) {
                 # code...
-                foreach ($productos as $prod) {
+                foreach ($productos as $valor) {
                     # code...
-                    if($prod['id']==$producto_id){
+                    if($valor['id']==$producto_id){
                         ?>
                             <div class="product">
                             <img src="<?php echo $valor['urlImg']; ?>" alt="Producto">
@@ -90,7 +90,7 @@
                                     <h3><?php echo $valor['nombre']; ?></h3>
                                     <p><?php echo number_format($valor['precio'], 2, ',', '.'); 
                                     $total=$total+$valor['precio'];
-                                    array_push($ids,$valor['id'])?></p>
+                                    ?></p>
                                 </div>
                             </div>
                         <?php
