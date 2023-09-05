@@ -67,6 +67,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
     </div>
     <div class="second-navbar">
+
+        <form action="index.php" method="get">
         <ul>
 
             <li><a href="index.php?categoria=01">Cascos</a></li>
@@ -82,7 +84,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
         </ul>
+        </form>
     </div>
+    </div>
+<div class="content">
+    <div class="ad-container">
+        <div class="ad-slideshow">
+            <img src="../Media/cascos.png" alt="Anuncio 1">
+            <img src="../Media/intercom.png" alt="Anuncio 2">
+            <img src="../Media/llantas.png" alt="Anuncio 3">
+            <img src="../Media/yamalube1.jpg" alt="Anuncio 4">
+        </div>
     </div>
 
     <div class="product-catalog">
@@ -92,10 +104,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         require_once '../Classes/init.php';
 
-        $finalArray = $aux->getProducts();
-        $categoria = '00';
-        echo "$categoria";
         
+        $finalArray = $aux->getProducts();
+
+        if (isset($_GET['categoria'])!=1) {
+            $categoria = '10';
+        } else {
+            $categoria = $_GET['categoria'];
+            
+        }
+        
+        
+
         foreach ($finalArray as $valor) {
             $prodCategory = $valor->getCategoria();
             if ($prodCategory == $categoria) {
@@ -104,7 +124,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <img src="<?php echo "{$valor->getImg()}"; ?>" alt="Producto">
                     <div class="product-info">
                         <h3><?php echo "{$valor->getName()}"; ?></h3>
-                        <p><?php echo "{$valor->getPrice()}"; ?></p>
+                        <p>$<?php echo number_format($valor->getPrice(), 2, ',', '.'); ?></p>
                         <form method="post" action="process.php">
                             <input type="hidden" name="product_name" value="<?php echo "{$valor->getName()}"; ?>">
                             <input type="hidden" name="product_price" value="<?php echo "{$valor->getPrice()}"; ?>">
@@ -115,7 +135,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <button class="add-to-cart" data-product-id="1" type="submit" name="addButton">Add</button>
                         </form>
                     </div>
-            </div>
+                </div>
             <?php
 
             } else {
@@ -125,7 +145,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <img src="<?php echo "{$valor->getImg()}"; ?>" alt="Producto 1">
                         <div class="product-info">
                             <h3><?php echo "{$valor->getName()}"; ?></h3>
-                            <p><?php echo "{$valor->getPrice()}"; ?></p>
+                            <p>$<?php echo number_format($valor->getPrice(), 2, ',', '.'); ?></p>
                             <button class="add-to-cart" data-product-id="1">Agregar al carrito</button>
                         </div>
                     </div>
@@ -138,6 +158,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
     </div>
 </div>
+
 <footer class="footer">
     <div class="contact-info">
         <p>Teléfono de contacto: (123) 456-7890</p>
