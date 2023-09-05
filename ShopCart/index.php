@@ -90,7 +90,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <div class="content">
     <div class="ad-container">
         <div class="ad-slideshow">
-            <img src="../Media/SHPRO-630-C-WALLPAPER_Mesa-de-trabajo-1-1-scaled.jpg alt="Anuncio 1">
+            <img src="../Media/cascos.png" alt="Anuncio 1">
             <img src="../Media/intercom.png" alt="Anuncio 2">
             <img src="../Media/llantas.png" alt="Anuncio 3">
             <img src="../Media/yamalube1.jpg" alt="Anuncio 4">
