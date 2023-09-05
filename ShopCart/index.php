@@ -88,9 +88,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </form>
     </div>
     </div>
+
+
 <div class="content">
-
-
     <div class="product-catalog">
         <div class="product-row">
 
