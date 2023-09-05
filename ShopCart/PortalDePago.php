@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Styles/PortalDePago.css">
-    <script src="../Styles/shopcart.js"></script>
+    <script src="../Styles/PortalDePago.js"></script>
     <title>MotoGearPro</title>
 </head>
 <body>
@@ -126,7 +126,7 @@
  
     <div class="payment-form">
         <h2>Formulario de Pago</h2>
-        <form action="procesar_pago.php" method="post" onsubmit="actualizarTotSend()">
+        <form action="procesar_pago.php" method="post" onsubmit="return validarFormulario()">
             <div class="form-group">
                 <label for="nombre_titular">Nombre del Titular:</label>
                 <input type="text" id="nombre_titular" name="nombre_titular" required>
@@ -178,6 +178,13 @@
         </script>
     </div>
 </div>
+</div>
+
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p id="modal-message"></p>
+  </div>
 </div>
 
 
