@@ -1,3 +1,23 @@
+<?php
+session_start(); // Iniciar la sesión
+
+if (!isset($_SESSION['carrito'])) {
+    $_SESSION['carrito'] = []; // Inicializar el carrito si aún no existe
+}
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['eliminar'])) {
+    // Verificar si se ha enviado un formulario para eliminar un producto del carrito
+    $producto_id = $_POST['producto_id'];
+    
+    // Eliminar el producto del carrito por su índice
+    unset($_SESSION['carrito'][$producto_id]);
+    
+    // Reindexar el arreglo para evitar índices vacíos
+    $_SESSION['carrito'] = array_values($_SESSION['carrito']);
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -56,7 +76,20 @@
 
         <!-- Repite estos elementos para cada artículo en el carrito -->
         <div class="cart-item">
-        
+        <?php if (!empty($_SESSION['carrito'])) : ?>
+            <?php foreach ($_SESSION['carrito'] as $key => $producto) : ?>
+                <li>
+                    <?php echo $producto['pro']; ?> - $<?php echo $producto['precio']; ?>
+                    <form method="POST">
+                        <input type="hidden" name="producto_id" value="<?php echo $key; ?>">
+                        <button type="submit" name="eliminar">Eliminar</button>
+                    </form>
+                </li>
+            <?php endforeach; ?>
+        <?php else : ?>
+            <li>El carrito está vacío.</li>
+        <?php endif; ?>
+
         <?php
 
         require_once '../Classes/init.php';

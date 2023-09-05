@@ -1,7 +1,7 @@
 <?php
 class Product
 {
-
+    private int $id;
     private string $name;
     private float $price;
     private string $img;
@@ -11,8 +11,8 @@ class Product
 
 
     
-    public function __construct($name, $price, $img,$categoria,$distribuidor,$marca)
-    {
+    public function __construct($id,$name, $price, $img,$categoria,$distribuidor,$marca)
+    {   $this->id = $id;
         $this->name = $name;
         $this->price = $price;
         $this->img = $img;
@@ -21,6 +21,25 @@ class Product
         $this->distribuidor=$distribuidor;
     }
 
+    /**
+     * Get the value of id
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set the value of name
+     *
+     * @return  self
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+
+        return $this;
+    }
     
     
     /**
@@ -141,7 +160,7 @@ class Product
 
     public static function __set_state($data)
     {
-        $product = new Product('', 1, '','00','','');
+        $product = new Product(0,'', 1, '','00','','');
         foreach ($data as $key => $value) {
             $product->$key = $value;
         }
