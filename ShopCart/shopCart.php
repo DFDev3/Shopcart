@@ -54,18 +54,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['eliminar'])) {
         </div>
     </div>
 </div>
-<div class="second-navbar">
+<div >
     <ul>
-        <li><a href="index.php">INICIO</a></li>
-        <li><a href="index.php?categoria=01">Cascos</a></li>
-        <li><a href="index.php?categoria=02">Accesorios</a></li>
-        <li><a href="index.php?categoria=03">Intercomunicadores</a></li>
-        <li><a href="index.php?categoria=04">Aceites</a></li>
-        <li><a href="index.php?categoria=05">Llantas</a></li>
-        <li><a href="index.php?categoria=06">Maletas</a></li>
-        <li><a href="index.php?categoria=07">Soportes</a></li>
-        <li><a href="index.php?categoria=08">Exploradoras</a></li>
-        <li><a href="index.php?categoria=09">Ropa</a></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+
     </ul>
 </div>
 <div class="carritoCompra">
