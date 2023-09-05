@@ -8,6 +8,7 @@
     <title>MotoGearPro</title>
 </head>
 <body>
+    <div class="container" name="big-navbar">
         <div class="navbar">
             <div class="logo">
                 <a href="index.php">
@@ -40,55 +41,63 @@
     </div>
     <div class="second-navbar">
         <ul>
-            <li><a href="Cascos.php">Cascos</a></li>
-            <li><a href="Accesorios.php">Accesorios</a></li>
-            <li><a href="Intercomunicadores.php">Intercomunicadores</a></li>
-            <li><a href="Aceites.php">Aceites</a></li>
-            <li><a href="llantas.php">Llantas</a></li>
-            <li><a href="maletas.php">Maletas</a></li>
-            <li><a href="soportes.php">Soportes</a></li>
-            <li><a href="exploradoras.php">Exploradoras</a></li>
-            <li><a href="botas.php">Botas</a></li>
-            <li><a href="ofertas.php">Ofertas</a></li>
+
+            <li><a href="index.php?categoria=01">Cascos</a></li>
+            <li><a href="index.php?categoria=02">Accesorios</a></li>
+            <li><a href="index.php?categoria=03">Intercomunicadores</a></li>
+            <li><a href="index.php?categoria=04">Aceites</a></li>
+            <li><a href="index.php?categoria=05">Llantas</a></li>
+            <li><a href="index.php?categoria=06">Maletas</a></li>
+            <li><a href="index.php?categoria=07">Soportes</a></li>
+            <li><a href="index.php?categoria=08">Exploradoras</a></li>
+            <li><a href="index.php?categoria=09">Ropa</a></li>
+            <li><a href="index.php?categoria=10">Ofertas</a></li>
+
+
         </ul>
     </div>
-    
- 
-    <div class="ad-container">
-        <div class="ad-slideshow">
-            <img src="../Media/SHPRO-630-C-WALLPAPER_Mesa-de-trabajo-1-1-scaled.jpg alt="Anuncio 1">
-            <img src="../Media/intercom.png" alt="Anuncio 2">
-            <img src="../Media/llantas.png" alt="Anuncio 3">
-            <img src="../Media/yamalube1.jpg" alt="Anuncio 4">
-        </div>
     </div>
+
     <div class="product-catalog">
         <div class="product-row">
+
         <?php
 
-        require_once '../Classes/ProdArray.php';
-        require_once '../Classes/Product.php';
+        require_once '../Classes/init.php';
 
-        $aux = new Products();
+        $finalArray = $aux->getProducts();
+        $categoria = '04';
+        echo "$categoria";
+        
+        foreach ($finalArray as $valor) {
+            $prodCategory = $valor->getCategoria();
 
-        $aux->addProduct(new Product("Aceite", 2100000, "../Media/img/0001.png",'00','',''), 0);
-        $aux->addProduct(new Product("Más aceite", 564000, "../Media/img/0002.png",'00','',''), 1);
-        $aux->addProduct(new Product("Otro aceite", 60000, "../Media/img/0003.png",'00','',''), 2);
-        $aux->addProduct(new Product("Ya ahora si el ultimo aceite", 2300000, "../Media/img/0004.png",'00','',''), 3);
-
-        $productos = $aux->getProducts();
-        foreach ($productos as $valor) {
-        ?>
+            if ($prodCategory == $categoria) {
+                ?>
                 <div class="product">
                 <img src="<?php echo "{$valor->getImg()}"; ?>" alt="Producto 1">
-                <div class="product-info">
-                    <h3><?php echo "{$valor->getName()}"; ?></h3>
-                    <p><?php echo "{$valor->getPrice()}"; ?></p>
-                    <button class="add-to-cart" data-product-id="1">Agregar al carrito</button>
-                </div>
+                    <div class="product-info">
+                        <h3><?php echo "{$valor->getName()}"; ?></h3>
+                        <p><?php echo "{$valor->getPrice()}"; ?></p>
+                        <button class="add-to-cart" data-product-id="1">Agregar al carrito</button>
+                    </div>
             </div>
+            <?php
 
-        <?php
+            } else {
+                if ($categoria == '00') {
+                    ?>
+                    <div class="product">
+                        <img src="<?php echo "{$valor->getImg()}"; ?>" alt="Producto 1">
+                        <div class="product-info">
+                            <h3><?php echo "{$valor->getName()}"; ?></h3>
+                            <p><?php echo "{$valor->getPrice()}"; ?></p>
+                            <button class="add-to-cart" data-product-id="1">Agregar al carrito</button>
+                        </div>
+                    </div>
+                    <?php
+                } 
+            }
         }
         ?>
         
