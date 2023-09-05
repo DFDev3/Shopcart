@@ -1,30 +1,3 @@
-<?php
-
-require '../Classes/init.php';
-
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (isset($_POST['addButton'])) {
-
-
-        $productName = $_POST['product_name'];
-        $productPrice = $_POST['product_price'];
-        $productImg = $_POST['product_img'];
-        $productCat = $_POST['product_cat'];
-        $productDis = $_POST['product_dis'];
-        $productBrand = $_POST['product_brand'];
-
-        echo "Added $productName to the cart!";
-
-        // $productToAdd = new Product($productName,$productPrice,$productImg,$productCat,$productDis,$productBrand);
-        $remoteCount = $remote->countProducts();
-        $remote->addProduct(new Product($productName,$productPrice,$productImg,$productCat,$productDis,$productBrand),$remoteCount+1);
-
-    }
-}
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -98,27 +71,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         require_once '../Classes/init.php';
 
         $finalArray = $aux->getProducts();
-        $categoria = '00';
+        $categoria = '01';
         echo "$categoria";
         
         foreach ($finalArray as $valor) {
-            $prodCategory = $valor->getCategoria();
+            $prodCategory = $valor->ggietCategoria();
+
             if ($prodCategory == $categoria) {
                 ?>
                 <div class="product">
-                <img src="<?php echo "{$valor->getImg()}"; ?>" alt="Producto">
+                <img src="<?php echo "{$valor->getImg()}"; ?>" alt="Producto 1">
                     <div class="product-info">
                         <h3><?php echo "{$valor->getName()}"; ?></h3>
                         <p><?php echo "{$valor->getPrice()}"; ?></p>
-                        <form method="post" action="process.php">
-                            <input type="hidden" name="product_name" value="<?php echo "{$valor->getName()}"; ?>">
-                            <input type="hidden" name="product_price" value="<?php echo "{$valor->getPrice()}"; ?>">
-                            <input type="hidden" name="product_img" value="<?php echo "{$valor->getImg()}"; ?>">
-                            <input type="hidden" name="product_cat" value="<?php echo "{$valor->getCategoria()}"; ?>">
-                            <input type="hidden" name="product_dis" value="<?php echo "{$valor->getDistribuidor()}"; ?>">
-                            <input type="hidden" name="product_brand" value="<?php echo "{$valor->getMarca()}"; ?>">                        
-                            <button class="add-to-cart" data-product-id="1" type="submit" name="addButton">Add</button>
-                        </form>
+                        <button class="add-to-cart" data-product-id="1">Agregar al carrito</button>
                     </div>
             </div>
             <?php
