@@ -25,9 +25,9 @@
                 <div class="shopcart">
                     <a href="shopCart.php">
                         <img src="../Media/canasta de compra.png" alt="Carrito">
-
                         <span class="cart-counter">0</span>
                                         
+                        
                     </a>
                 </div>
             </div>
@@ -100,7 +100,7 @@
                     <div class="product-info">
                         <h3><?php echo "{$valor->getName()}"; ?></h3>
                         <p>$<?php echo number_format($valor->getPrice(), 2, ',', '.'); ?></p>
-                        <form method="post" action="index.php">
+                        <form method="post">
                             <input type="hidden" name="product_name" value="<?php echo "{$valor->getName()}"; ?>">
                             <input type="hidden" name="product_price" value="<?php echo "{$valor->getPrice()}"; ?>">
                             <input type="hidden" name="product_img" value="<?php echo "{$valor->getImg()}"; ?>">
@@ -140,11 +140,10 @@
                 $productDis = $_POST['product_dis'];
                 $productBrand = $_POST['product_brand'];
 
-                echo "Added $productName to the cart!";
-
                 // $productToAdd = new Product($productName,$productPrice,$productImg,$productCat,$productDis,$productBrand);
                 $_SESSION['CarritoSesion']->agregarProducto(new Product($productName,$productPrice,$productImg,$productCat,$productDis,$productBrand));
                 print_r($_SESSION['CarritoSesion']);
+                echo "<br><br><br>";
                 print_r($_POST);
             }
         }
