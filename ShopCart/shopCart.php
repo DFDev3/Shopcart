@@ -72,7 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['eliminar'])) {
     <h2>Carrito de Compra</h2>
 </div>
 <div class="content">
-<div class="product-catalog">
+    <div class="product-catalog">
         <div class="product-row">
 
         <?php             
@@ -83,7 +83,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['eliminar'])) {
                 
                 ?>
                 <div class="product">
-                <img src="<?php echo $valor['urlImg']; ?>" alt="Producto">
+                    <img src="<?php echo $valor['urlImg']; ?>" alt="Producto">
                     <div class="product-info">
                         <h3><?php echo $valor['nombre']; ?></h3>
                         <p><?php echo number_format($valor['precio'], 2, ',', '.'); 
