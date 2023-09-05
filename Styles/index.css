@@ -17,8 +17,9 @@ body {
     left: 0;
     right: 0;
     height: 10%;
-
+    z-index: 2;
 }
+
 .logo img {
     max-width:10%;
     height: auto;
@@ -123,10 +124,11 @@ body {
     background-color: #000;
     color: #fff;
     padding: 10px;
-    position: static;
+    position:absolute;
     top: 0; /* Espacio para la barra principal */
     left: 0;
     right: 0;
+    z-index: 1;
     margin-top: 85px;
 }
 
@@ -163,7 +165,7 @@ body {
     min-height: 50vh;/* Ancho máximo del contenedor */
     max-height: 60vh; /* Altura máxima del contenedor (40% de la altura de la ventana) */
     overflow: hidden;
-
+    
     margin: 0 auto; /* Centra horizontalmente */
     margin-top: 5%;
 }
