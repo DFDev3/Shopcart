@@ -84,21 +84,23 @@
             <div class="contentBusqueda">
            <h1>Si ingreso un criterio de busqueda</h1>
            </div>
-           <?php
-
-                $matchingProducts = array();
-                    
-                foreach ($itemArray as $product) {
-                    // Convert both the product name and search query to lowercase for case-insensitive comparison.
-                    $productName = strtolower($product->getName());
-                    $busca = strtolower($busca);
-                    
-                    // Check if the search query is found in the product name.
-                    if (strpos($productName, $busca) !== false) {
-                        $matchingProducts[] = $product;
+           <?php                
+            $matchingProducts = array();
+                    foreach ($itemArray as $product) {
+                        // Convert both the product name and search query to lowercase for case-insensitive comparison.
+                        $productName = strtolower($product->getName());
+                        $busca = strtolower($busca);
+                        
+                        // Check if the search query is found in the product name.
+                        if (strpos($productName, $busca) !== false) {
+                            $matchingProducts[] = $product;
+                        }
                     }
-                }
-                
+                ?>
+<div class="content">
+    <div class="product-catalog">
+        <div class="product-row">
+           <?php
                 // Display the matching products.
                 if (count($matchingProducts) > 0) {
                     echo "<h2>Productos encontrados:</h2>";
@@ -107,8 +109,9 @@
                         <img src="<?php echo "{$valor->getImg()}"; ?>" alt="Producto">
                             <div class="product-info">
                                 <h3><?php echo "{$valor->getName()}"; ?></h3>
-                        </div>
+                        
                                 <p>$<?php echo number_format($valor->getPrice(), 2, ',', '.'); ?></p>}
+                    </div>
                     <?php
                     }
                 } else {
@@ -117,14 +120,18 @@
  
             //}
         }           
-        
+    
         
         
         ?>
-        
+                        </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
+
+
 
 <footer class="footer">
     <div class="contact-info">
