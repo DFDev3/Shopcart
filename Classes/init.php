@@ -1,9 +1,7 @@
 <?php
 
-
-
-require '/xampp/htdocs/backend/Shopcart/Classes/Product.php';
-require '/xampp/htdocs/backend/Shopcart/Classes/ProdArray.php';
+require 'Product.php';
+require 'ProdArray.php';
 
 
 $aux = new Products();
