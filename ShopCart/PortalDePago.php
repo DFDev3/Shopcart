@@ -9,118 +9,104 @@
     <title>MotoGearPro</title>
 </head>
 <body>
-    <div class="navbar">
-        <div class="logo">
-            <a href="index.php">
-                <img src="../Media/LogoTienda3.1.png" alt="Logo">
-            </a>
-        </div>
-        <div class="nav-items">
-            <div class="top-nav">
-            <div class="contacto">
-                <a href="#">Contactenos</a>
-            </div>
-            <div class="shopcart">
-                <a href="shopCart.php">
-                    <img src="../Media/canasta de compra.png" alt="Carrito">
-                    <span class="cart-counter">0</span>
+    <div class="container" >
+        <div class="navbar">
+            <div class="logo">
+                <a href="index.php">
+                    <img src="../Media/LogoTienda3.1.png" alt="Logo">
                 </a>
+                
             </div>
-        </div>
-        <div class="bottom-nav">
-        <form class="search-box" action="busqueda.php" method="get">
+            <div class="bottom-nav">
+                
+                <form class="search-box" action="busqueda.php" method="get">
                     <input type="text" name="busca" placeholder="Buscar...">
                     <button type="submit" >Buscar</button>
                 </form>
+                
+            </div>
+            <div class="nav-items">
+                <div class="top-nav">
+                    <div class="contacto">
+                        <a href="#">Contactenos</a>
+                    </div>
+                    <div class="shopcart">
+                        <a href="shopCart.php">
+                            <img src="../Media/canasta de compra.png" alt="Carrito">
+
+                            <span class="cart-counter">0</span>
+                                            
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    
+        <div class="second-navbar">
+
+            <form action="index.php" method="get">
+            <ul>
+                <li class="color-diferente"><a href="index.php">INICIO</a></li>
+                <li><a href="index.php?categoria=01">Cascos</a></li>
+                <li><a href="index.php?categoria=02">Accesorios</a></li>
+                <li><a href="index.php?categoria=03">Intercomunicadores</a></li>
+                <li><a href="index.php?categoria=04">Aceites</a></li>
+                <li><a href="index.php?categoria=05">Llantas</a></li>
+                <li><a href="index.php?categoria=06">Maletas</a></li>
+                <li><a href="index.php?categoria=07">Soportes</a></li>
+                <li><a href="index.php?categoria=08">Exploradoras</a></li>
+                <li><a href="index.php?categoria=09">Ropa</a></li>
+
+
+
+            </ul>
+            </form>
         </div>
     </div>
-</div>
-<div class="second-navbar">
-    <ul>
-        <li><a href="Cascos.php">Cascos</a></li>
-        <li><a href="Accesorios.php">Accesorios</a></li>
-        <li><a href="Intercomunicadores.php">Intercomunicadores</a></li>
-        <li><a href="Aceites.php">Aceites</a></li>
-        <li><a href="llantas.php">Llantas</a></li>
-        <li><a href="maletas.php">Maletas</a></li>
-        <li><a href="soportes.php">Soportes</a></li>
-        <li><a href="exploradoras.php">Exploradoras</a></li>
-        <li><a href="botas.php">Botas</a></li>
-        <li><a href="ofertas.php">Ofertas</a></li>
-    </ul>
-</div>
 <div class="cont">
+    
 <div class="product-catalog">
-    <div class="product-row">
-        <div class="product">
-            <img src="../Media/img/0021.png" alt="Producto 1">
-            <div class="product-info">
-                <h3>Producto 1</h3>
-                <p>Descripción del producto</p>
-                
-            </div>
-        </div>
-        <div class="product">
-            <img src="../Media/img/0022.png" alt="Producto 2">
-            <div class="product-info">
-                <h3>Producto 2</h3>
-                <p>Descripción del producto</p>
-                
-            </div>
-        </div>
-        <div class="product">
-            <img src="../Media/img/0023.png" alt="Producto 3">
-            <div class="product-info">
-                <h3>Producto 3</h3>
-                <p>Descripción del producto</p>
-                
-            </div>
-        </div>
-        <div class="product">
-            <img src="../Media/img/0024.png" alt="Producto 4">
-            <div class="product-info">
-                <h3>Producto 4</h3>
-                <p>Descripción del producto</p>
-                
-            </div>
-        </div>
+        <div class="product-row">
+        
+        
 
-    </div>
-    <div class="product-row">
-        <div class="product">
-            <img src="../Media/img/0025.png" alt="Producto 5">
-            <div class="product-info">
-                <h3>Producto 5</h3>
-                <p>Descripción del producto</p>
-                
-            </div>
-        </div>
-        <div class="product">
-            <img src="../Media/img/0026.png" alt="Producto 6">
-            <div class="product-info">
-                <h3>Producto 6</h3>
-                <p>Descripción del producto</p>
-                
-            </div>
-        </div>
-        <div class="product">
+        <?php
+        require '../Classes/init.php';
 
-        </div>
-        <div class="product">
+        $total=0;
+        $ids = isset($_GET['ids']) ? explode(',', $_GET['ids']) : array();
 
+        if (!empty($ids)){
+            foreach ($ids as $producto_id) {
+                # code...
+                foreach ($productos as $valor) {
+                    # code...
+                    if($valor['id']==$producto_id){
+                        ?>
+                            <div class="product">
+                            <img src="<?php echo $valor['urlImg']; ?>" alt="Producto">
+                                <div class="product-info">
+                                    <h3><?php echo $valor['nombre']; ?></h3>
+                                    <p><?php echo number_format($valor['precio'], 2, ',', '.'); 
+                                    $total=$total+$valor['precio'];
+                                    ?></p>
+                                </div>
+                            </div>
+                        <?php
+                    }
+                }
+            }
+        }else{
+            ?>
+                <div class="content"></div>
+                <h1 >El carrito esta vacio</h1>
+            <?php
+        }
+              
+        ?>
+        
         </div>
-    </div>
-    <div  class="product-row">
-        <h1>Subtotal: $<span id="subt">0</span></h1><br>
-    </div>
-    <div class="product-row">        
-        <h4>Gastos de envio: $10000</h4>
-    </div>
-    <div class="product-row">      
-        <h4>Impuestos IVA: $<span id="iva">0</span></h4>
-    </div>
-    <div class="product-row">        
-        <h2> Total: $<span id="total">0</span></h2>
     </div>
 </div>
  

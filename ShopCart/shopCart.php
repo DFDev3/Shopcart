@@ -69,22 +69,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['eliminar'])) {
     <h2>Carrito de Compra</h2>
 </div>
 <div class="content">
-<div class="product-catalog">
+    <div class="product-catalog">
         <div class="product-row">
 
         <?php             
         $total=0;
+        $ids=array();
+        
         if (!empty($_SESSION['carrito'])) {
             
             foreach ($_SESSION['carrito'] as $key => $valor) {
                 
                 ?>
                 <div class="product">
-                <img src="<?php echo $valor['urlImg']; ?>" alt="Producto">
+                    <img src="<?php echo $valor['urlImg']; ?>" alt="Producto">
                     <div class="product-info">
                         <h3><?php echo $valor['nombre']; ?></h3>
                         <p><?php echo number_format($valor['precio'], 2, ',', '.'); 
-                        $total=$total+$valor['precio'];?></p>
+                        $total=$total+$valor['precio'];
+                        array_push($ids,$valor['id'])?></p>
                         
                         <form method="post">
                             <input type="hidden" name="product_id" value=""<?php echo $key; ?>>                       
@@ -109,10 +112,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['eliminar'])) {
 <div class="cart">
     <div class="total">
         <h3>Total del Carrito: <?php echo number_format($total, 2, ',', '.')?></h3>
-
-        <a href="PortalDePago.php">
-            <button class="Pagar" >Pagar</button>
-        </a>
+        <div>
+        <a href="PortalDePago.php?ids=<?php echo urlencode(implode(',', $ids)); ?>">
+                <button class="Pagar" >Pagar</button>
+            </a>
+        </div>
+        
     </div>
 </div>
 <footer class="footer">
