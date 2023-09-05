@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../Styles/shopcart.css">
+    <link rel="stylesheet" href="../Styles/PortalDePago.css">
     <script src="../Styles/shopcart.js"></script>
     <title>MotoGearPro</title>
 </head>
@@ -48,21 +49,123 @@
         <li><a href="ofertas.php">Ofertas</a></li>
     </ul>
 </div>
-/* ESPACIO PARA FORMULARIO DE PAGO 
+<div class="cont">
+<div class="product-catalog">
+    <div class="product-row">
+        <div class="product">
+            <img src="../Media/img/0021.png" alt="Producto 1">
+            <div class="product-info">
+                <h3>Producto 1</h3>
+                <p>Descripción del producto</p>
+                
+            </div>
+        </div>
+        <div class="product">
+            <img src="../Media/img/0022.png" alt="Producto 2">
+            <div class="product-info">
+                <h3>Producto 2</h3>
+                <p>Descripción del producto</p>
+                
+            </div>
+        </div>
+        <div class="product">
+            <img src="../Media/img/0023.png" alt="Producto 3">
+            <div class="product-info">
+                <h3>Producto 3</h3>
+                <p>Descripción del producto</p>
+                
+            </div>
+        </div>
+        <div class="product">
+            <img src="../Media/img/0024.png" alt="Producto 4">
+            <div class="product-info">
+                <h3>Producto 4</h3>
+                <p>Descripción del producto</p>
+                
+            </div>
+        </div>
 
+    </div>
+    <div class="product-row">
+        <div class="product">
+            <img src="../Media/img/0025.png" alt="Producto 5">
+            <div class="product-info">
+                <h3>Producto 5</h3>
+                <p>Descripción del producto</p>
+                
+            </div>
+        </div>
+        <div class="product">
+            <img src="../Media/img/0026.png" alt="Producto 6">
+            <div class="product-info">
+                <h3>Producto 6</h3>
+                <p>Descripción del producto</p>
+                
+            </div>
+        </div>
+        <div class="product">
 
+        </div>
+        <div class="product">
 
+        </div>
+    </div>
+    <div  class="product-row">
+        <h1>Subtotal: $<span id="subt">0</span></h1><br>
+    </div>
+    <div class="product-row">        
+        <h4>Gastos de envio: $10000</h4>
+    </div>
+    <div class="product-row">      
+        <h4>Impuestos IVA: $<span id="iva">0</span></h4>
+    </div>
+    <div class="product-row">        
+        <h2> Total: $<span id="total">0</span></h2>
+    </div>
+</div>
+ 
+    <div class="payment-form">
+        <h2>Formulario de Pago</h2>
+        <form action="procesar_pago.php" method="post">
+            <div class="form-group">
+                <label for="nombre_titular">Nombre del Titular:</label>
+                <input type="text" id="nombre_titular" name="nombre_titular" required>
+            </div>
+            <div class="form-group">
+                <label for="numero_tarjeta">Número de Tarjeta:</label>
+                <input type="text" id="numero_tarjeta" name="numero_tarjeta" pattern="[0-9]{16}" required>
+            </div>
+            <div class="form-group">
+                <label for="mes_expiracion">Mes de Expiración (mm):</label>
+                <input type="text" id="mes_expiracion" name="mes_expiracion" pattern="(0[1-9]|1[0-2])" placeholder="mm" required inputmode="numeric" maxlength="2">
+            </div>
+            <div class="form-group">
+                <label for="ano_expiracion">Año de Expiración (aa):</label>
+                <input type="text" id="ano_expiracion" name="ano_expiracion" pattern="[0-9]{2}" placeholder="aa" required inputmode="numeric" maxlength="2">
+            </div>
 
+            <div class="form-group">
+                <label for="ccv">CCV:</label>
+                <input type="text" id="ccv" name="ccv" pattern="[0-9]{3}" required>
+            </div>
+            <div class="form-group">
+                <label for="numero_cuotas">Número de Cuotas:</label>
+                <select id="numero_cuotas" name="numero_cuotas">
+                    <?php
+                    for ($i = 1; $i <= 36; $i++) {
+                        echo "<option value='$i'>$i</option>";
+                    }
+                    ?>
+                </select>
+            </div>
+            <div class="form-group">
+                <button type="submit" name="pagar">Pagar</button>
+            </div>
+        </form>
+    </div>
+</div>
+</div>
 
-
-
-
-
-
-
-
-
-/*FIN DE ESPACIO PARA FORMULARIO
 
 
 <footer class="footer">
@@ -72,9 +175,40 @@
     </div>
     <div class="social-media">
         <a href="#"><img src="../Media/facebook.png" alt="Facebook"></a>
-        <a href="#"><img src="../Media/twitter.png" alt="Twitter"></a>
-        <a href="#"><img src="../Media/instagram.png" alt="Instagram"></a>
+        <a href="https://twitter.com/FateD_GG"><img src="../Media/twitter.png" alt="Twitter"></a>
+        <a href="https://www.instagram.com/denis.fedi/"><img src="../Media/instagram.png" alt="Instagram"></a>
     </div>
 </footer>
+<script>
+var subt = 0;
+var iva = 0.19;
+var valiva = 0;
+var total = 0;
+var totenvio = 0;
+function actualizarSubtotal() {
+    //CALCULOS NECESARIOS PARA EL SUBTOTAL
+    subt=total-(total*iva);
+    document.getElementById("subt").textContent = subt;
+};
+function actualizarIVA() {
+    //CALCULOS NECESARIOS PARA EL SUBTOTAL
+    valiva =total*iva;
+    document.getElementById("iva").textContent = valiva;
+};
+function actualizarTotal(){
+    //Aqui va el valor total de la suma de los productos
+}
+function actualizarTotEnvio(){
+    //Se suma el total con el envío y esto es lo que se muestra
+    totenvio=total+10000;
+    document.getElementById("total").textContent = totenvio;
+}
+
+// Llama a la función para mostrar el subtotal inicial (0)
+actualizarTotal();
+actualizarIVA();
+actualizarSubtotal();
+actualizarTotEnvio();
+</script>
 </body>
 </html>

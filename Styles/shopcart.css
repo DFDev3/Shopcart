@@ -107,7 +107,7 @@ body {
 }
 
 .search-box button {
-    background-color: #007bff;
+    background-color: #8a0303;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -229,7 +229,7 @@ body {
 
 .item-price p {
     font-weight: bold;
-    color: #007bff; /* Color de texto para el precio */
+    color: #8a0303; /* Color de texto para el precio */
 }
 
 .total {

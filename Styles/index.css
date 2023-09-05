@@ -110,7 +110,7 @@ body {
 }
 
 .search-box button {
-    background-color: #007bff;
+    background-color: #8a0303;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -238,7 +238,7 @@ body {
 }
 
 .add-to-cart {
-    background-color: #007bff;
+    background-color: #8a0303;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -282,7 +282,7 @@ body {
 }
 
 .add-to-cart-button {
-    background-color: #3498db;
+    background-color:#ad0606;
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -291,5 +291,5 @@ body {
 }
 
 .add-to-cart-button:hover {
-    background-color: #2980b9;
+    background-color: #b40808;
 }

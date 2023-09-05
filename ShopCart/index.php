@@ -57,33 +57,47 @@
         </ul>
     </div>
     </div>
+
     <div class="product-catalog">
         <div class="product-row">
+
         <?php
 
-        require_once '../Classes/ProdArray.php';
-        require_once '../Classes/Product.php';
+        require_once '../Classes/init.php';
 
-        $aux = new Products();
+        $finalArray = $aux->getProducts();
+        $categoria = '04';
+        echo "$categoria";
+        
+        foreach ($finalArray as $valor) {
+            $prodCategory = $valor->getCategoria();
 
-        $aux->addProduct(new Product("Aceite", 2100000, "../Media/img/0001.png",'00','',''), 0);
-        $aux->addProduct(new Product("Más aceite", 564000, "../Media/img/0002.png",'00','',''), 1);
-        $aux->addProduct(new Product("Otro aceite", 60000, "../Media/img/0003.png",'00','',''), 2);
-        $aux->addProduct(new Product("Ya ahora si el ultimo aceite", 2300000, "../Media/img/0004.png",'00','',''), 3);
-
-        $productos = $aux->getProducts();
-        foreach ($productos as $valor) {
-        ?>
+            if ($prodCategory == $categoria) {
+                ?>
                 <div class="product">
                 <img src="<?php echo "{$valor->getImg()}"; ?>" alt="Producto 1">
-                <div class="product-info">
-                    <h3><?php echo "{$valor->getName()}"; ?></h3>
-                    <p><?php echo "{$valor->getPrice()}"; ?></p>
-                    <button class="add-to-cart" data-product-id="1">Agregar al carrito</button>
-                </div>
+                    <div class="product-info">
+                        <h3><?php echo "{$valor->getName()}"; ?></h3>
+                        <p><?php echo "{$valor->getPrice()}"; ?></p>
+                        <button class="add-to-cart" data-product-id="1">Agregar al carrito</button>
+                    </div>
             </div>
+            <?php
 
-        <?php
+            } else {
+                if ($categoria == '00') {
+                    ?>
+                    <div class="product">
+                        <img src="<?php echo "{$valor->getImg()}"; ?>" alt="Producto 1">
+                        <div class="product-info">
+                            <h3><?php echo "{$valor->getName()}"; ?></h3>
+                            <p><?php echo "{$valor->getPrice()}"; ?></p>
+                            <button class="add-to-cart" data-product-id="1">Agregar al carrito</button>
+                        </div>
+                    </div>
+                    <?php
+                } 
+            }
         }
         ?>
         
@@ -97,8 +111,8 @@
     </div>
     <div class="social-media">
         <a href="#"><img src="../Media/facebook.png" alt="Facebook"></a>
-        <a href="#"><img src="../Media/twitter.png" alt="Twitter"></a>
-        <a href="#"><img src="../Media/instagram.png" alt="Instagram"></a>
+        <a href="https://twitter.com/FateD_GG"><img src="../Media/twitter.png" alt="Twitter"></a>
+        <a href="https://www.instagram.com/denis.fedi/"><img src="../Media/instagram.png" alt="Instagram"></a>
     </div>
 </footer>
 
