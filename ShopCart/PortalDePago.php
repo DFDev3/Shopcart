@@ -28,10 +28,10 @@
             </div>
         </div>
         <div class="bottom-nav">
-            <div class="search-box">
-                <input type="text" placeholder="Buscar...">
-                <button type="submit">Buscar</button>
-            </div>
+        <form class="search-box" action="busqueda.php" method="get">
+                    <input type="text" name="busca" placeholder="Buscar...">
+                    <button type="submit" >Buscar</button>
+                </form>
         </div>
     </div>
 </div>

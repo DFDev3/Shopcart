@@ -35,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <title>MotoGearPro</title>
 </head>
 <body>
-    <div class="container" name="big-navbar">
+    <div class="container" >
         <div class="navbar">
             <div class="logo">
                 <a href="index.php">
@@ -44,10 +44,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 
             </div>
             <div class="bottom-nav">
-                <div class="search-box">
-                    <input type="text" placeholder="Buscar...">
-                    <button type="submit">Buscar</button>
-                </div>
+                
+                <form class="search-box" action="busqueda.php" method="get">
+                    <input type="text" name="busca" placeholder="Buscar...">
+                    <button type="submit" >Buscar</button>
+                </form>
+                
             </div>
             <div class="nav-items">
                 <div class="top-nav">
@@ -66,27 +68,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
             
         </div>
-    </div>
-    <div class="second-navbar">
+    
+        <div class="second-navbar">
 
-        <form action="index.php" method="get">
-        <ul>
-            <li class="color-diferente"><a href="index.php">INICIO</a></li>
-            <li><a href="index.php?categoria=01">Cascos</a></li>
-            <li><a href="index.php?categoria=02">Accesorios</a></li>
-            <li><a href="index.php?categoria=03">Intercomunicadores</a></li>
-            <li><a href="index.php?categoria=04">Aceites</a></li>
-            <li><a href="index.php?categoria=05">Llantas</a></li>
-            <li><a href="index.php?categoria=06">Maletas</a></li>
-            <li><a href="index.php?categoria=07">Soportes</a></li>
-            <li><a href="index.php?categoria=08">Exploradoras</a></li>
-            <li><a href="index.php?categoria=09">Ropa</a></li>
-            
+            <form action="index.php" method="get">
+            <ul>
+                <li class="color-diferente"><a href="index.php">INICIO</a></li>
+                <li><a href="index.php?categoria=01">Cascos</a></li>
+                <li><a href="index.php?categoria=02">Accesorios</a></li>
+                <li><a href="index.php?categoria=03">Intercomunicadores</a></li>
+                <li><a href="index.php?categoria=04">Aceites</a></li>
+                <li><a href="index.php?categoria=05">Llantas</a></li>
+                <li><a href="index.php?categoria=06">Maletas</a></li>
+                <li><a href="index.php?categoria=07">Soportes</a></li>
+                <li><a href="index.php?categoria=08">Exploradoras</a></li>
+                <li><a href="index.php?categoria=09">Ropa</a></li>
 
 
-        </ul>
-        </form>
-    </div>
+
+            </ul>
+            </form>
+        </div>
     </div>
 
 
@@ -97,7 +99,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <?php
 
         require_once '../Classes/init.php';
-
+        
         
         $finalArray = $aux->getProducts();
 
