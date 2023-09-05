@@ -131,13 +131,12 @@ body {
     background-color: #000;
     color: #fff;
     padding: 10px;
-    margin-top: 6.4%; /* Igual a la altura de la barra principal */
+    margin-top: 6.3%; /* Igual a la altura de la barra principal */
     z-index: 1; /* Asegura que la segunda barra esté por debajo de la barra principal */
     position:absolute; /* Fija la segunda barra en la parte superior */
     top: 0;
     left: 0;
     right: 0;
-
     display:flexbox;
     width: 100%;
 
@@ -194,6 +193,13 @@ body {
     padding: 20px;
 }
 
+/* Contenido de la página de Busqueda*/
+.contentBusqueda {
+    margin-top: 120px; /* Espacio para la segunda barra */
+    padding: 20px;
+    height: 70%;
+}
+
 /* Estilos para el carrusel de anuncios */
 .ad-container {
     background-color: #f0f0f0; /* Color de fondo del contenedor de anuncios */
@@ -204,15 +210,14 @@ body {
     overflow: hidden;
     margin: 0 auto; /* Centra horizontalmente */
     margin-top: 5%;
-    justify-content: center;
+    
     margin-bottom: 5%;
 }
 
 .ad-slideshow {
-    
     display: flex;
     align-items: center;
-    justify-content: center;
+    
     height: 100%; /* Ajusta el contenedor para centrar verticalmente las imágenes */
 }
 
@@ -251,8 +256,8 @@ body {
     padding: 20px;
     max-width: 100%;
     margin: 0 auto;
-    margin-left: 15%;
-    margin-right: 15%;
+    margin-left: 10%;
+    margin-right: 10%;
     box-sizing: border-box;
 }
 
@@ -351,3 +356,5 @@ body {
 .add-to-cart-button:hover {
     background-color: #b40808;
 }
+
+
