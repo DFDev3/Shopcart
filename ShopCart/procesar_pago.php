@@ -1,5 +1,6 @@
 <?php
 if (isset($_POST['pagar'])) {
+    $totsend = $_POST['totsend'];
     $nombre_titular = $_POST['nombre_titular'];
     $numero_tarjeta = $_POST['numero_tarjeta'];
     $ccv = $_POST['ccv'];
@@ -15,6 +16,7 @@ if (isset($_POST['pagar'])) {
     }else {
         // Procesar el pago aquí (simulación)
         echo "Pago completado";
+        echo $totsend;
     }
 }
 ?>
