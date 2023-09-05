@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -110,16 +111,16 @@
         </div>
     </div>
     <div  class="product-row">
-        <h1>Subtotal: </h1><br>
+        <h1>Subtotal: $<span id="subt">0</span></h1><br>
     </div>
     <div class="product-row">        
-        <h4>Gastos de envio:</h4>
+        <h4>Gastos de envio: $10000</h4>
     </div>
     <div class="product-row">      
-        <h4>Impuestos IVA: </h4>
+        <h4>Impuestos IVA: $<span id="iva">0</span></h4>
     </div>
     <div class="product-row">        
-        <h2> Total:</h2>
+        <h2> Total: $<span id="total">0</span></h2>
     </div>
 </div>
  
@@ -178,5 +179,36 @@
         <a href="https://www.instagram.com/denis.fedi/"><img src="../Media/instagram.png" alt="Instagram"></a>
     </div>
 </footer>
+<script>
+var subt = 0;
+var iva = 0.19;
+var valiva = 0;
+var total = 0;
+var totenvio = 0;
+function actualizarSubtotal() {
+    //CALCULOS NECESARIOS PARA EL SUBTOTAL
+    subt=total-(total*iva);
+    document.getElementById("subt").textContent = subt;
+};
+function actualizarIVA() {
+    //CALCULOS NECESARIOS PARA EL SUBTOTAL
+    valiva =total*iva;
+    document.getElementById("iva").textContent = valiva;
+};
+function actualizarTotal(){
+    //Aqui va el valor total de la suma de los productos
+}
+function actualizarTotEnvio(){
+    //Se suma el total con el envío y esto es lo que se muestra
+    totenvio=total+10000;
+    document.getElementById("total").textContent = totenvio;
+}
+
+// Llama a la función para mostrar el subtotal inicial (0)
+actualizarTotal();
+actualizarIVA();
+actualizarSubtotal();
+actualizarTotEnvio();
+</script>
 </body>
 </html>
