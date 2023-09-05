@@ -54,36 +54,39 @@
     <!-- Vista del carrito de compra -->
     <div class="cart">
 
-        
         <!-- Repite estos elementos para cada artículo en el carrito -->
         <div class="cart-item">
-            <img src="../Media/cascoprueba.jpg" alt="Producto 1">
-            <div class="item-details">
-                <h3>Producto 1</h3>
-                <p>Descripción del Producto 1.</p>
-            </div>
-            <div class="item-price">
-                <p>Precio: $10.00</p>
-            </div>
-            <div class="item-actions">
-                <button class="remove-button">Eliminar</button>
-            </div>
-        </div>
         
-        <div class="cart-item">
-            <img src="../Media/cascoprueba.jpg" alt="Producto 2">
-            <div class="item-details">
-                <h3>Producto 2</h3>
-                <p>Descripción del Producto 2.</p>
+        <?php
+
+        require_once '../Classes/init.php';
+        $carrito = $remote->getProducts();
+
+        print_r($carrito);
+        echo "holaaaaaaaaaaaaaa";
+        print_r($remote);
+        
+        foreach ($carrito as $valor) {
+            ?>
+                <div class="product">
+                <img src="<?php echo "{$valor->getImg()}"; ?>" alt="Producto">
+                    <div class="product-info">
+                        <h3><?php echo "{$valor->getName()}"; ?></h3>
+                        <p><?php echo "{$valor->getPrice()}"; ?></p>
+                    </div>
             </div>
-            <div class="item-price">
-                <p>Precio: $15.00</p>
-            </div>
-            <div class="item-actions">
-                <button class="remove-button">Eliminar</button>
-            </div>
+
+            <?php
+        }
+        ?>
         </div>
+
     </div>
+
+
+
+
+
 <div class="cart">
     <div class="total">
         <h3>Total del Carrito: $25.00</h3>
