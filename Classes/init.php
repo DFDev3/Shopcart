@@ -7,6 +7,7 @@ require 'ProdArray.php';
 require 'Cart.php';
 
 
+
 $productos = [
     ['id' => 1, 'nombre' => 'Eni Fork Oil 15w', 'precio' => 20000.0, 'urlImg' => '../Media/img/0001.png', 'categoria' => '04', 'distribuidor' => 'MotoPartes Express', 'marca' => 'Eni'],
     ['id' => 2, 'nombre' => 'Eni mix 2T', 'precio' => 25000.0, 'urlImg' => '../Media/img/0002.png', 'categoria' => '04', 'distribuidor' => 'MotoPartes Express', 'marca' => 'Eni'],
@@ -58,6 +59,7 @@ $productos = [
     ['id' => 49, 'nombre' => 'Forro para Casco', 'precio' => 34000.0, 'urlImg' => '../Media/img/0049.png', 'categoria' => '10', 'distribuidor' => 'MotoPartes Express', 'marca' => 'XiaXia'],
     ['id' => 50, 'nombre' => 'Cubierta para motor', 'precio' => 40500.0, 'urlImg' => '../Media/img/0050.png', 'categoria' => '10', 'distribuidor' => 'MotoPartes Express', 'marca' => 'Taurus']
 ];
+
 
 //final
 

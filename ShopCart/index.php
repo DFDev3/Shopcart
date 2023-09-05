@@ -79,7 +79,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['agregar'])) {
     <title>MotoGearPro</title>
 </head>
 <body>
-    <div class="container" name="big-navbar">
+    <div class="container" >
         <div class="navbar">
             <div class="logo">
                 <a href="index.php">
@@ -87,67 +87,75 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['agregar'])) {
                 </a>
                 
             </div>
-            
+            <div class="bottom-nav">
+                
+                <form class="search-box" action="busqueda.php" method="get">
+                    <input type="text" name="busca" placeholder="Buscar...">
+                    <button type="submit" >Buscar</button>
+                </form>
+                
+            </div>
             <div class="nav-items">
                 <div class="top-nav">
-                <div class="contacto">
-                    <a href="#">Contactenos</a>
-                </div>
-                <div class="shopcart">
-                    <a href="shopCart.php">
-                        <img src="../Media/canasta de compra.png" alt="Carrito">
-                        <span class="cart-counter">0</span>
-                                        
-                        
-                    </a>
-                </div>
-            </div>
-            <div class="bottom-nav">
-                <div class="search-box">
-                    <input type="text" placeholder="Buscar...">
-                    <button type="submit">Buscar</button>
+                    <div class="contacto">
+                        <a href="#">Contactenos</a>
+                    </div>
+                    <div class="shopcart">
+                        <a href="shopCart.php">
+                            <img src="../Media/canasta de compra.png" alt="Carrito">
+
+                            <span class="cart-counter">0</span>
+                                            
+                        </a>
+                    </div>
                 </div>
             </div>
+            
         </div>
-    </div>
-    <div class="second-navbar">
+    
+        <div class="second-navbar">
 
-        <form action="index.php" method="get">
-        <ul>
+            <form action="index.php" method="get">
+            <ul>
+                <li class="color-diferente"><a href="index.php">INICIO</a></li>
+                <li><a href="index.php?categoria=01">Cascos</a></li>
+                <li><a href="index.php?categoria=02">Accesorios</a></li>
+                <li><a href="index.php?categoria=03">Intercomunicadores</a></li>
+                <li><a href="index.php?categoria=04">Aceites</a></li>
+                <li><a href="index.php?categoria=05">Llantas</a></li>
+                <li><a href="index.php?categoria=06">Maletas</a></li>
+                <li><a href="index.php?categoria=07">Soportes</a></li>
+                <li><a href="index.php?categoria=08">Exploradoras</a></li>
+                <li><a href="index.php?categoria=09">Ropa</a></li>
 
-            <li><a href="index.php?categoria=01">Cascos</a></li>
-            <li><a href="index.php?categoria=02">Accesorios</a></li>
-            <li><a href="index.php?categoria=03">Intercomunicadores</a></li>
-            <li><a href="index.php?categoria=04">Aceites</a></li>
-            <li><a href="index.php?categoria=05">Llantas</a></li>
-            <li><a href="index.php?categoria=06">Maletas</a></li>
-            <li><a href="index.php?categoria=07">Soportes</a></li>
-            <li><a href="index.php?categoria=08">Exploradoras</a></li>
-            <li><a href="index.php?categoria=09">Ropa</a></li>
-            <li><a href="index.php?categoria=10">Ofertas</a></li>
 
 
-        </ul>
-        </form>
-    </div>
+            </ul>
+            </form>
+        </div>
     </div>
 <div class="content">
-    <div class="ad-container">
-        <div class="ad-slideshow">
-            <img src="../Media/cascos.png" alt="Anuncio 1">
-            <img src="../Media/intercom.png" alt="Anuncio 2">
-            <img src="../Media/llantas.png" alt="Anuncio 3">
-            <img src="../Media/yamalube1.jpg" alt="Anuncio 4">
-        </div>
-    </div>
+
 
     <div class="product-catalog">
         <div class="product-row">
 
+
         <?php             
+
 
         if (isset($_GET['categoria'])!=1) {
             $categoria = '10';
+        ?>
+            <div class="ad-container">
+                <div class="ad-slideshow">
+                    <img src="../Media/cascos.png" alt="Anuncio 1">
+                    <img src="../Media/intercom.png" alt="Anuncio 2">
+                    <img src="../Media/llantas.png" alt="Anuncio 3">
+                    <img src="../Media/yamalube1.jpg" alt="Anuncio 4">
+                </div>
+            </div>
+        <?php
         } else {
             $categoria = $_GET['categoria'];
             
