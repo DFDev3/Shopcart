@@ -12,16 +12,20 @@ body {
     justify-content: space-between;
     background-color: rgb(138, 3, 3);
     padding: 10px;
-    position:fixed;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
     height: 10%;
     z-index: 2;
+    width: 100%;
 }
-
+.logo{
+    width: 10%;
+    margin-right: 4%;
+}
 .logo img {
-    max-width:10%;
+    max-width:100%;
     height: auto;
     padding-left: 30%;
 }
@@ -30,10 +34,7 @@ body {
 .nav-items {
     display: flex;
     align-items:center;
-    flex-direction: column;
-    margin-left: auto;
-    width: fit-content;
-    padding-right:  10%;
+    width: 20%;
     margin-top: 0%;
     padding-top: 0%;
      /* Hace que los elementos ocupen el espacio restante */
@@ -52,8 +53,6 @@ body {
     margin-right: 20px;
     padding-right: 10px;
     width: fit-content;
-
-
 }
 .shopcart{
     
@@ -94,19 +93,26 @@ body {
 .bottom-nav {
     display: flex;
     align-items: center;
+    width: 60%;
 }
 
 /* Barra de búsqueda */
 .search-box {
     display: flex;
     align-items: center;
+    justify-content: flex-end;
+    width: 100%;
 }
 
 .search-box input[type="text"] {
-    padding: 5px;
+    padding: 15px;
     border: none;
     border-radius: 10px;
     margin-right: 10px;
+    width: 60%;
+    font-size: large;
+    font-family: Abandon;
+    
 }
 
 .search-box button {
@@ -114,27 +120,32 @@ body {
     color: #fff;
     border: none;
     border-radius: 5px;
-    padding: 5px 10px;
+    padding: 15px 30px;
     cursor: pointer;
     align-content: center;
     align-items: center;
+    font-size: large;
+    font-family: Abandon;
 }
 .second-navbar {
-
     background-color: #000;
     color: #fff;
     padding: 10px;
-    position:absolute;
-    top: 0; /* Espacio para la barra principal */
+    margin-top: 6.3%; /* Igual a la altura de la barra principal */
+    z-index: 1; /* Asegura que la segunda barra esté por debajo de la barra principal */
+    position:absolute; /* Fija la segunda barra en la parte superior */
+    top: 0;
     left: 0;
     right: 0;
-    z-index: 1;
-    margin-top: 6.3%;
+    display:flexbox;
+    width: 100%;
+
 }
 
 .second-navbar ul {
     list-style-type: none;
     padding: 0;
+    margin-top: 20px;
     display: flex;
     justify-content: space-around;
 }
@@ -149,31 +160,64 @@ body {
     color: #fff;
 }
 
+/* Estilos para el icono del menú (hamburguesa) */
+.menu-icon {
+    display: block; /* Ocultar el icono del menú por defecto */
+    font-size: 24px;
+    cursor: pointer;
+    margin-right: 20px;
+    margin-top: 10px;
+}
+
+/* Media query para dispositivos con un ancho de pantalla máximo de 768px */
+@media screen and (max-width: 768px) {
+    .second-navbar {
+        display: block; /* Mostrar la segunda barra de navegación */
+        margin-top: 0; /* Reiniciar el margen superior */
+        padding: 10px 20px;
+    }
+
+    .second-navbar ul {
+        flex-direction: column; /* Mostrar los elementos en una columna */
+        align-items: center; /* Centrar los elementos */
+    }
+
+    .menu-icon {
+        display: block; /* Mostrar el icono del menú (hamburguesa) */
+    }
+}
+
 /* Contenido de la página */
 .content {
     margin-top: 120px; /* Espacio para la segunda barra */
     padding: 20px;
 }
 
+/* Contenido de la página de Busqueda*/
+.contentBusqueda {
+    margin-top: 120px; /* Espacio para la segunda barra */
+    padding: 20px;
+    height: 70%;
+}
+
 /* Estilos para el carrusel de anuncios */
 .ad-container {
     background-color: #f0f0f0; /* Color de fondo del contenedor de anuncios */
     padding: 1px;
-    text-align: center;
-    max-width: 60%; 
-    min-width: 60%;
+    width: 100%;
     min-height: 50vh;/* Ancho máximo del contenedor */
     max-height: 60vh; /* Altura máxima del contenedor (40% de la altura de la ventana) */
     overflow: hidden;
-    
     margin: 0 auto; /* Centra horizontalmente */
     margin-top: 5%;
+    
+    margin-bottom: 5%;
 }
 
 .ad-slideshow {
     display: flex;
     align-items: center;
-    justify-content: center;
+    
     height: 100%; /* Ajusta el contenedor para centrar verticalmente las imágenes */
 }
 
@@ -185,6 +229,7 @@ body {
     display: none; /* Oculta inicialmente todas las imágenes */
     margin: 0 auto; /* Centra horizontalmente */
 }
+
 
 
 .product {
@@ -201,6 +246,7 @@ body {
 .product img {
     max-width: 90%;
     height: 60%;
+
 }
 
 .product-info {
@@ -208,27 +254,48 @@ body {
 }
 .product-catalog {
     padding: 20px;
-    max-width: 80%;
+    max-width: 100%;
     margin: 0 auto;
+    margin-left: 10%;
+    margin-right: 10%;
+    box-sizing: border-box;
 }
 
 .product-row {
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
     margin-bottom: 20px;
+
+
+    justify-content: flex-start; /* Cambiamos a 'flex-start' para alinear a la izquierda */
+
     height: max-content;
+
 }
 
 .product {
-    flex-basis: calc(25% - 10px);
-    box-sizing: border-box;
-    background-color: #fff;
+    border: 1px solid #cccccc00;
     padding: 10px;
     text-align: center;
-    border: 1px solid #ddd;
-    margin-bottom: 20px;
+    width: 300px;
+    height: 400px;
+    margin: 10px 10px 20px 0px; /* Agregamos margen a la derecha y abajo para separar los elementos */
+    box-sizing: border-box;
+    min-width: 20%;
 }
+
+/* Agregamos un media query para controlar el ancho de los elementos en pantallas pequeñas */
+@media screen and (max-width: 768px) {
+    .product {
+        max-width: calc(50% - 20px); /* 2 elementos por fila en pantallas pequeñas */
+    }
+
+    .product-row {
+        justify-content: flex-start;
+        margin-right: -10px; /* Compensamos el margen negativo para la última fila */
+    }
+}
+
 .add-to-cart {
     background-color:#8a0303;
     color: #fff;
@@ -240,13 +307,13 @@ body {
 }
 
 
-
 /* Estilos para el footer */
 .footer {
     background-color: rgb(138, 3, 3);
     color: #fff;
     padding: 20px;
     text-align: center;
+    width: 100%;
 }
 
 .contact-info {
@@ -289,3 +356,5 @@ body {
 .add-to-cart-button:hover {
     background-color: #b40808;
 }
+
+

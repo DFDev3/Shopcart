@@ -61,7 +61,7 @@ $aux->addProduct(new Product("Cubierta para motor", 40500.0, "../Media/img/0050.
 //hola 1
 
 $productos = $aux->getProducts();
-file_put_contents('cart.php', '<?php return ' . var_export($productos, true) . ';');
+
 
 //final
 
