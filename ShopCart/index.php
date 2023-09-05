@@ -40,6 +40,8 @@
         </div>
     </div>
     <div class="second-navbar">
+
+        <form action="index.php" method="get">
         <ul>
 
             <li><a href="index.php?categoria=01">Cascos</a></li>
@@ -55,7 +57,17 @@
 
 
         </ul>
+        </form>
     </div>
+    </div>
+    <div class="content">
+    <div class="ad-container">
+        <div class="ad-slideshow">
+            <img src="../Media/SHPRO-630-C-WALLPAPER_Mesa-de-trabajo-1-1-scaled.jpg alt="Anuncio 1">
+            <img src="../Media/intercom.png" alt="Anuncio 2">
+            <img src="../Media/llantas.png" alt="Anuncio 3">
+            <img src="../Media/yamalube1.jpg" alt="Anuncio 4">
+        </div>
     </div>
 
     <div class="product-catalog">
@@ -64,10 +76,10 @@
         <?php
 
         require_once '../Classes/init.php';
-
+        
         $finalArray = $aux->getProducts();
-        $categoria = '04';
-        echo "$categoria";
+        $categoria = $_GET['categoria'];
+        
         
         foreach ($finalArray as $valor) {
             $prodCategory = $valor->getCategoria();
@@ -102,6 +114,7 @@
         ?>
         
         </div>
+    </div>
     </div>
 </div>
 <footer class="footer">
