@@ -12,7 +12,7 @@ body {
     justify-content: space-between;
     background-color: rgb(138, 3, 3);
     padding: 10px;
-    position:fixed;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -128,21 +128,24 @@ body {
     font-family: Abandon;
 }
 .second-navbar {
-
     background-color: #000;
     color: #fff;
     padding: 10px;
-    position:absolute;
-    top: 0; /* Espacio para la barra principal */
+    margin-top: 6.4%; /* Igual a la altura de la barra principal */
+    z-index: 1; /* Asegura que la segunda barra esté por debajo de la barra principal */
+    position:absolute; /* Fija la segunda barra en la parte superior */
+    top: 0;
     left: 0;
     right: 0;
-    z-index: 1;
-    margin-top: 6.3%;
+    display:flexbox;
+    width: 100%;
+  
 }
 
 .second-navbar ul {
     list-style-type: none;
     padding: 0;
+    margin-top: 20px;
     display: flex;
     justify-content: space-around;
 }
@@ -155,6 +158,33 @@ body {
 .second-navbar ul li a {
     text-decoration: none;
     color: #fff;
+}
+
+/* Estilos para el icono del menú (hamburguesa) */
+.menu-icon {
+    display: block; /* Ocultar el icono del menú por defecto */
+    font-size: 24px;
+    cursor: pointer;
+    margin-right: 20px;
+    margin-top: 10px;
+}
+
+/* Media query para dispositivos con un ancho de pantalla máximo de 768px */
+@media screen and (max-width: 768px) {
+    .second-navbar {
+        display: block; /* Mostrar la segunda barra de navegación */
+        margin-top: 0; /* Reiniciar el margen superior */
+        padding: 10px 20px;
+    }
+
+    .second-navbar ul {
+        flex-direction: column; /* Mostrar los elementos en una columna */
+        align-items: center; /* Centrar los elementos */
+    }
+
+    .menu-icon {
+        display: block; /* Mostrar el icono del menú (hamburguesa) */
+    }
 }
 
 /* Contenido de la página */
@@ -195,6 +225,7 @@ body {
 }
 
 
+
 .product {
     border: 1px solid #ccc;
     padding: 10px;
@@ -209,34 +240,59 @@ body {
 .product img {
     max-width: 90%;
     height: 60%;
+
 }
 
 .product-info {
     margin-top: 10px;
+
+    text-align: center;
 }
+
 .product-catalog {
     padding: 20px;
-    max-width: 80%;
+    max-width: 100%;
     margin: 0 auto;
+    margin-left: 15%;
+    margin-right: 15%;
+    box-sizing: border-box;
 }
 
 .product-row {
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
     margin-bottom: 20px;
+
+
+    justify-content: flex-start; /* Cambiamos a 'flex-start' para alinear a la izquierda */
+
     height: max-content;
+
 }
 
 .product {
-    flex-basis: calc(25% - 10px);
-    box-sizing: border-box;
-    background-color: #fff;
+    border: 1px solid #cccccc00;
     padding: 10px;
     text-align: center;
-    border: 1px solid #ddd;
-    margin-bottom: 20px;
+    width: 300px;
+    height: 400px;
+    margin: 10px 10px 20px 0px; /* Agregamos margen a la derecha y abajo para separar los elementos */
+    box-sizing: border-box;
+    min-width: 20%;
 }
+
+/* Agregamos un media query para controlar el ancho de los elementos en pantallas pequeñas */
+@media screen and (max-width: 768px) {
+    .product {
+        max-width: calc(50% - 20px); /* 2 elementos por fila en pantallas pequeñas */
+    }
+
+    .product-row {
+        justify-content: flex-start;
+        margin-right: -10px; /* Compensamos el margen negativo para la última fila */
+    }
+}
+
 .add-to-cart {
     background-color:#8a0303;
     color: #fff;
@@ -255,6 +311,315 @@ body {
     color: #fff;
     padding: 20px;
     text-align: center;
+}
+
+.contact-info {
+    margin-bottom: 20px;
+}
+
+.social-media {
+    font-size: 24px;
+}
+
+.social-media a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+.social-media a img {
+    width: 30px; /* Establece el ancho deseado */
+    height: auto; /* Permite que la altura se ajuste automáticamente para mantener la proporción */
+}
+.product-title {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+.product-price {
+    font-size: 1.5rem;
+    color: #e74c3c;
+    margin: 10px 0;
+}
+
+.add-to-cart-button {
+    background-color:#ad0606;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.add-to-cart-button:hover {
+    background-color: #b40808;
+}
+
+
+/* Estilos generales */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Barra de navegación */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(138, 3, 3);
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 10%;
+    z-index: 2;
+}
+
+.logo img {
+    max-width:10%;
+    height: auto;
+    padding-left: 30%;
+}
+
+/* Contenedor de elementos de navegación */
+.nav-items {
+    display: flex;
+    align-items:center;
+    flex-direction: column;
+    margin-left: auto;
+    width: fit-content;
+    padding-right:  10%;
+    margin-top: 0%;
+    padding-top: 0%;
+     /* Hace que los elementos ocupen el espacio restante */
+}
+
+/* Contenedor superior de elementos de navegación */
+.top-nav {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0%;
+}
+
+.top-nav a {
+    text-decoration: none;
+    color: #fff;
+    margin-right: 20px;
+    padding-right: 10px;
+    width: fit-content;
+
+
+}
+.shopcart{
+    
+    padding-top: 0%;
+    display: flex;
+}
+/* Contenedor del carrito de compras */
+.cart {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.cart a {
+    text-decoration: none;
+    color: #fff;
+    display: flex;
+    align-items: center;
+}
+
+.top-nav img {
+    max-width: 30px; /* Tamaño del carrito de compras */
+    height: auto;
+    margin-right: 5px;
+}
+
+.cart-counter {
+    background-color: #ff2323;
+    color: #fff;
+    border-radius: 50%;
+    padding: 5px 10px;
+    margin-top: 6px;
+    margin-left: -15px;
+    position: absolute;
+
+}
+/* Contenedor inferior de elementos de navegación */
+.bottom-nav {
+    display: flex;
+    align-items: center;
+}
+
+/* Barra de búsqueda */
+.search-box {
+    display: flex;
+    align-items: center;
+}
+
+.search-box input[type="text"] {
+    padding: 5px;
+    border: none;
+    border-radius: 10px;
+    margin-right: 10px;
+}
+
+.search-box button {
+    background-color: #000000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    align-content: center;
+    align-items: center;
+}
+.second-navbar {
+    background-color: #000;
+    color: #fff;
+    padding: 10px;
+    margin-top: 6.4%; /* Igual a la altura de la barra principal */
+    z-index: 1; /* Asegura que la segunda barra esté por debajo de la barra principal */
+    position:absolute; /* Fija la segunda barra en la parte superior */
+    top: 0;
+    left: 0;
+    right: 0;
+    display:flexbox;
+    width: 100%;
+    
+}
+
+.second-navbar ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.second-navbar ul li {
+    margin: 0;
+    padding: 0;
+}
+
+.second-navbar ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Estilos para el icono del menú (hamburguesa) */
+.menu-icon {
+    display: block; /* Ocultar el icono del menú por defecto */
+    font-size: 24px;
+    cursor: pointer;
+    margin-right: 20px;
+    margin-top: 10px;
+}
+
+/* Media query para dispositivos con un ancho de pantalla máximo de 768px */
+@media screen and (max-width: 768px) {
+    .second-navbar {
+        display: block; /* Mostrar la segunda barra de navegación */
+        margin-top: 0; /* Reiniciar el margen superior */
+        padding: 10px 20px;
+    }
+
+    .second-navbar ul {
+        flex-direction: column; /* Mostrar los elementos en una columna */
+        align-items: center; /* Centrar los elementos */
+    }
+
+    .menu-icon {
+        display: block; /* Mostrar el icono del menú (hamburguesa) */
+    }
+}
+
+/* Contenido de la página */
+.content {
+    margin-top: 120px; /* Espacio para la segunda barra */
+    padding: 20px;
+}
+
+/* Estilos para el carrusel de anuncios */
+.ad-container {
+    background-color: #f0f0f0; /* Color de fondo del contenedor de anuncios */
+    padding: 1px;
+    text-align: center;
+    max-width: 60%; 
+    min-width: 60%;
+    min-height: 50vh;/* Ancho máximo del contenedor */
+    max-height: 60vh; /* Altura máxima del contenedor (40% de la altura de la ventana) */
+    overflow: hidden;
+    
+    margin: 0 auto; /* Centra horizontalmente */
+    margin-top: 5%;
+}
+
+.ad-slideshow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%; /* Ajusta el contenedor para centrar verticalmente las imágenes */
+}
+
+.ad-slideshow img {
+    max-width: 100%;
+    max-height: 100%; /* Establece la altura máxima en 100% */
+    width: auto; /* Permite que la imagen se ajuste automáticamente al ancho */
+    height: auto; /* Permite que la imagen se ajuste automáticamente a la altura */
+    display: none; /* Oculta inicialmente todas las imágenes */
+    margin: 0 auto; /* Centra horizontalmente */
+}
+
+
+.product img {
+    max-width: 100%; /* Establece un ancho máximo del 100% */
+    height: auto; /* La altura se ajusta automáticamente para mantener la relación de aspecto original */
+    max-height: 200px;
+
+}
+
+.product-info {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.product-catalog {
+    padding: 20px;
+    max-width: 100%;
+    margin: 0 auto;
+    margin-left: 15%;
+    margin-right: 15%;
+    box-sizing: border-box;
+}
+
+.product-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+
+    justify-content: flex-start; /* Cambiamos a 'flex-start' para alinear a la izquierda */
+}
+.add-to-cart {
+    background-color:#8a0303;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+
+/* Estilos para el footer */
+.footer {
+    background-color: rgb(138, 3, 3);
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
 }
 
 .contact-info {

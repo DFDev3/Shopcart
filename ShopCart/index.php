@@ -89,7 +89,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
     </div>
 <div class="content">
-    
+
 
     <div class="product-catalog">
         <div class="product-row">

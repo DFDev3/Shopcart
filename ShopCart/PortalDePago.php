@@ -126,7 +126,7 @@
  
     <div class="payment-form">
         <h2>Formulario de Pago</h2>
-        <form action="procesar_pago.php" method="post">
+        <form action="procesar_pago.php" method="post" onsubmit="actualizarTotSend()">
             <div class="form-group">
                 <label for="nombre_titular">Nombre del Titular:</label>
                 <input type="text" id="nombre_titular" name="nombre_titular" required>
@@ -159,9 +159,23 @@
                 </select>
             </div>
             <div class="form-group">
+                <input type="hidden" id='totsend' name="totsend" value=0>
+            </div>
+
+            <div class="form-group">
                 <button type="submit" name="pagar">Pagar</button>
             </div>
         </form>
+        <script>
+            function actualizarTotSend() {
+                // Calcula el nuevo valor de totenvio antes de enviar el formulario
+                var totsend = total + 10000;
+                // Actualiza el valor del input hidden
+                document.getElementById("totsend").value = totsend;
+                // No olvides devolver true para permitir que el formulario se envíe
+                return true;
+            }
+        </script>
     </div>
 </div>
 </div>
@@ -202,13 +216,16 @@ function actualizarTotEnvio(){
     //Se suma el total con el envío y esto es lo que se muestra
     totenvio=total+10000;
     document.getElementById("total").textContent = totenvio;
+
 }
+
 
 // Llama a la función para mostrar el subtotal inicial (0)
 actualizarTotal();
 actualizarIVA();
 actualizarSubtotal();
 actualizarTotEnvio();
+actualizarTotSend();
 </script>
 </body>
 </html>
