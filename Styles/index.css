@@ -18,10 +18,14 @@ body {
     right: 0;
     height: 10%;
     z-index: 2;
+    width: 100%;
 }
-
+.logo{
+    width: 10%;
+    margin-right: 4%;
+}
 .logo img {
-    max-width:10%;
+    max-width:100%;
     height: auto;
     padding-left: 30%;
 }
@@ -30,10 +34,7 @@ body {
 .nav-items {
     display: flex;
     align-items:center;
-    flex-direction: column;
-    margin-left: auto;
-    width: fit-content;
-    padding-right:  10%;
+    width: 20%;
     margin-top: 0%;
     padding-top: 0%;
      /* Hace que los elementos ocupen el espacio restante */
@@ -52,8 +53,6 @@ body {
     margin-right: 20px;
     padding-right: 10px;
     width: fit-content;
-
-
 }
 .shopcart{
     
@@ -94,30 +93,39 @@ body {
 .bottom-nav {
     display: flex;
     align-items: center;
+    width: 60%;
 }
 
 /* Barra de búsqueda */
 .search-box {
     display: flex;
     align-items: center;
+    justify-content: flex-end;
+    width: 100%;
 }
 
 .search-box input[type="text"] {
-    padding: 5px;
+    padding: 15px;
     border: none;
     border-radius: 10px;
     margin-right: 10px;
+    width: 60%;
+    font-size: large;
+    font-family: Abandon;
+    
 }
 
 .search-box button {
-    background-color: #8a0303;
+    background-color: #000000;
     color: #fff;
     border: none;
     border-radius: 5px;
-    padding: 5px 10px;
+    padding: 15px 30px;
     cursor: pointer;
     align-content: center;
     align-items: center;
+    font-size: large;
+    font-family: Abandon;
 }
 .second-navbar {
 
@@ -129,7 +137,7 @@ body {
     left: 0;
     right: 0;
     z-index: 1;
-    margin-top: 85px;
+    margin-top: 6.3%;
 }
 
 .second-navbar ul {
@@ -159,18 +167,18 @@ body {
 .ad-container {
     background-color: #f0f0f0; /* Color de fondo del contenedor de anuncios */
     padding: 1px;
-    text-align: center;
-    max-width: 60%; 
-    min-width: 60%;
+    width: 100%;
     min-height: 50vh;/* Ancho máximo del contenedor */
     max-height: 60vh; /* Altura máxima del contenedor (40% de la altura de la ventana) */
     overflow: hidden;
-    
     margin: 0 auto; /* Centra horizontalmente */
     margin-top: 5%;
+    justify-content: center;
+    margin-bottom: 5%;
 }
 
 .ad-slideshow {
+    
     display: flex;
     align-items: center;
     justify-content: center;
@@ -187,6 +195,25 @@ body {
 }
 
 
+.product {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    max-width: 25%;
+    margin: 0 auto;
+    max-height: 30%;
+    min-height: 30%;
+
+}
+
+.product img {
+    max-width: 90%;
+    height: 60%;
+}
+
+.product-info {
+    margin-top: 10px;
+}
 .product-catalog {
     padding: 20px;
     max-width: 80%;
@@ -210,45 +237,18 @@ body {
     border: 1px solid #ddd;
     margin-bottom: 20px;
 }
-
-/* --------------- Instancias de productos ---------------  */
-
-.Content {
-    margin-top: 200px; /* Adjust the margin value to control the distance from the top */
-    padding-top: 20px; /* Optional padding for spacing */
-}
-
-
-.product {
-    border: 1px solid #ccc;
-    padding: 10px;
-    text-align: center;
-    max-width: 300px;
-
-    /* orden que ajusta el tamaño automaticamente */
-    margin: 0 auto;
-    
-
-}
-
-.product img {
-    max-width: 90%;
-    height: 60%;
-}
-
-
-.product-info {
-    margin-top: 10px;
-}
-
 .add-to-cart {
-    background-color: #8a0303;
+    background-color:#8a0303;
     color: #fff;
     border: none;
     border-radius: 5px;
     padding: 5px 10px;
     cursor: pointer;
+    margin-bottom: 20px;
 }
+
+
+
 /* Estilos para el footer */
 .footer {
     background-color: rgb(138, 3, 3);
