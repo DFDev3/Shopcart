@@ -3,20 +3,28 @@ session_start(); // Iniciar la sesión
 
 if (isset($_SESSION['carrito'])!=1) {
     $_SESSION['carrito']=[];
+}else{
+    $productos=$_SESSION['carrito'];
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['eliminar'])) {
     // Verificar si se ha enviado un formulario para eliminar un producto del carrito
-    $producto_id = $_POST['producto_id'];
+    $producto_id = $_POST['product_id'];
     
     // Eliminar el producto del carrito por su índice
-    unset($_SESSION['carrito'][$producto_id]);
     
+        
+    
+    unset($productos[$producto_id]);
+    $productos=array_values($productos);
+    print_r($producto);
     // Reindexar el arreglo para evitar índices vacíos
     $_SESSION['carrito'] = array_values($_SESSION['carrito']);
 }
 ?>
 
+
+array(2,2,,2)
 
 <!DOCTYPE html>
 <html lang="en">
@@ -54,17 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['eliminar'])) {
         </div>
     </div>
 </div>
-<div >
-    <ul>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
 
-    </ul>
-</div>
 <div class="carritoCompra">
     <h2>Carrito de Compra</h2>
 </div>
@@ -78,20 +76,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['eliminar'])) {
         
         if (!empty($_SESSION['carrito'])) {
             
-            foreach ($_SESSION['carrito'] as $key => $valor) {
+            foreach ($productos as $key => $valor) {
                 
                 ?>
                 <div class="product">
                     <img src="<?php echo $valor['urlImg']; ?>" alt="Producto">
                     <div class="product-info">
                         <h3><?php echo $valor['nombre']; ?></h3>
-                        <p><?php echo number_format($valor['precio'], 2, ',', '.'); 
+                        <p>$<?php echo number_format($valor['precio'], 2, ',', '.'); 
                         $total=$total+$valor['precio'];
                         array_push($ids,$valor['id'])?></p>
                         
-                        <form method="post">
-                            <input type="hidden" name="product_id" value=""<?php echo $key; ?>>                       
-                            <button class="add-to-cart" data-product-id="1" type="submit" name="eliminar" >Eliminar</button>
+                        <form action="shopCart.php" method="post">
+                            <input type="hidden" name="product_id" value="<?php echo $key; ?>">                       
+                            <button class="add-to-cart"  type="submit" name="eliminar" >Eliminar</button>
                         </form>
                     </div>
                 </div>
