@@ -51,7 +51,7 @@ $productos = [
     ['id' => 49, 'nombre' => 'Forro para Casco', 'precio' => 34000.0, 'urlImg' => '../Media/img/0049.png', 'categoria' => '10', 'distribuidor' => 'MotoPartes Express', 'marca' => 'XiaXia'],
     ['id' => 50, 'nombre' => 'Cubierta para motor', 'precio' => 40500.0, 'urlImg' => '../Media/img/0050.png', 'categoria' => '10', 'distribuidor' => 'MotoPartes Express', 'marca' => 'Taurus']
 ];
-
+$cantidad=0;
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['agregar'])) {
     // Verificar si se ha enviado un formulario para agregar un producto al carrito
     $producto_id = $_POST['product_id'];
@@ -62,7 +62,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['agregar'])) {
         if($prod['id']==$producto_id){
             $producto=$prod;
         }
+        
     }
+    $cantidad=sizeof( $_SESSION['carrito']);
     // Agregar el producto al carrito
     $_SESSION['carrito'][] = $producto;
 
@@ -104,7 +106,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['agregar'])) {
                         <a href="shopCart.php">
                             <img src="../Media/canasta de compra.png" alt="Carrito">
 
-                            <span class="cart-counter">0</span>
+                            <span class="cart-counter"><?php echo $cantidad; ?></span>
                                             
                         </a>
                     </div>
