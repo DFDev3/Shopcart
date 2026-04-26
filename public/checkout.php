@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../Styles/PortalDePago.css">
-    <script src="../Styles/PortalDePago.js"></script>
+    <link rel="stylesheet" href="../assets/checkout.css">
+    <script src="../assets/checkout.js"></script>
     <title>MotoGearPro</title>
 </head>
 <body>
@@ -13,13 +13,13 @@
         <div class="navbar">
             <div class="logo">
                 <a href="index.php">
-                    <img src="../Media/LogoTienda3.1.png" alt="Logo">
+                    <img src="../assets/media/LogoTienda3.1.png" alt="Logo">
                 </a>
                 
             </div>
             <div class="bottom-nav">
                 
-                <form class="search-box" action="busqueda.php" method="get">
+                <form class="search-box" action="search.php" method="get">
                     <input type="text" name="busca" placeholder="Buscar...">
                     <button type="submit" >Buscar</button>
                 </form>
@@ -31,8 +31,8 @@
                         <a href="#">Contactenos</a>
                     </div>
                     <div class="shopcart">
-                        <a href="shopCart.php">
-                            <img src="../Media/canasta de compra.png" alt="Carrito">
+                        <a href="cart.php">
+                            <img src="../assets/media/canasta de compra.png" alt="Carrito">
 
                             <span class="cart-counter">0</span>
                                             
@@ -72,7 +72,7 @@
         
 
         <?php
-        require '../Classes/init.php';
+        require '../src/bootstrap.php';
 
         $total=0;
         $ids = isset($_GET['ids']) ? explode(',', $_GET['ids']) : array();
@@ -138,21 +138,21 @@
  
     <div class="payment-form">
         <h2>Formulario de Pago</h2>
-        <form action="procesar_pago.php" method="post" onsubmit="return validarFormulario()">
+        <form action="process_payment.php" method="post" onsubmit="return validarFormulario()">
             <div class="form-group">
                 <label for="nombre_titular">Nombre del Titular:</label>
                 <input type="text" id="nombre_titular" name="nombre_titular" required>
             </div>
             <div class="form-group">
-                <label for="numero_tarjeta">Número de Tarjeta:</label>
+                <label for="numero_tarjeta">Numero de Tarjeta:</label>
                 <input type="text" id="numero_tarjeta" name="numero_tarjeta" pattern="[0-9]{16}" required>
             </div>
             <div class="form-group">
-                <label for="mes_expiracion">Mes de Expiración (mm):</label>
+                <label for="mes_expiracion">Mes de Expiracion (mm):</label>
                 <input type="text" id="mes_expiracion" name="mes_expiracion" pattern="(0[1-9]|1[0-2])" placeholder="mm" required inputmode="numeric" maxlength="2">
             </div>
             <div class="form-group">
-                <label for="ano_expiracion">Año de Expiración (aa):</label>
+                <label for="ano_expiracion">Ano de Expiracion (aa):</label>
                 <input type="text" id="ano_expiracion" name="ano_expiracion" pattern="[0-9]{2}" placeholder="aa" required inputmode="numeric" maxlength="2">
             </div>
 
@@ -161,7 +161,7 @@
                 <input type="text" id="ccv" name="ccv" pattern="[0-9]{3}" required>
             </div>
             <div class="form-group">
-                <label for="numero_cuotas">Número de Cuotas:</label>
+                <label for="numero_cuotas">Numero de Cuotas:</label>
                 <select id="numero_cuotas" name="numero_cuotas">
                     <?php
                     for ($i = 1; $i <= 36; $i++) {
@@ -184,7 +184,7 @@
                 var totsend = total + 10000;
                 // Actualiza el valor del input hidden
                 document.getElementById("totsend").value = totsend;
-                // No olvides devolver true para permitir que el formulario se envíe
+                // No olvides devolver true para permitir que el formulario se envie
                 return true;
             }
         </script>
@@ -203,13 +203,13 @@
 
 <footer class="footer">
     <div class="contact-info">
-        <p>Teléfono de contacto: (123) 456-7890</p>
+        <p>Telefono de contacto: (123) 456-7890</p>
         <p>Correo de contacto: info@example.com</p>
     </div>
     <div class="social-media">
-        <a href="#"><img src="../Media/facebook.png" alt="Facebook"></a>
-        <a href="https://twitter.com/FateD_GG"><img src="../Media/twitter.png" alt="Twitter"></a>
-        <a href="https://www.instagram.com/denis.fedi/"><img src="../Media/instagram.png" alt="Instagram"></a>
+        <a href="#"><img src="../assets/media/facebook.png" alt="Facebook"></a>
+        <a href="https://twitter.com/FateD_GG"><img src="../assets/media/twitter.png" alt="Twitter"></a>
+        <a href="https://www.instagram.com/denis.fedi/"><img src="../assets/media/instagram.png" alt="Instagram"></a>
     </div>
 </footer>
 <script>
@@ -217,17 +217,12 @@ var subt = 0;
 var iva = 0.19;
 var valiva = 0;
 var total = <?php
-// Verifica si el parámetro 'total' está presente en la URL
+// Verifica si el parametro 'total' esta presente en la URL
 if (isset($_GET['total'])) {
-    // Obtiene el valor de 'total' y lo asigna a la variable $total
-    $total = $_GET['total'];
-
-    // Ahora, $total contiene el valor pasado en la URL
-    echo "El valor de total es: " . $total;
+    $total = (float) $_GET['total'];
+    echo $total;
 } else {
-    // Si 'total' no está presente en la URL, puedes proporcionar un valor predeterminado
-    $total = 0;
-    echo "Total no especificado en la URL. Usando valor predeterminado: " . $total;
+    echo 0;
 }
 ?>;
 var totenvio = 0;
@@ -245,14 +240,14 @@ function actualizarTotal(){
     //Aqui va el valor total de la suma de los productos
 }
 function actualizarTotEnvio(){
-    //Se suma el total con el envío y esto es lo que se muestra
+    // Se suma el total con el envio y esto es lo que se muestra
     totenvio=total+10000;
     document.getElementById("total").textContent = totenvio;
 
 }
 
 
-// Llama a la función para mostrar el subtotal inicial (0)
+// Llama a la funcion para mostrar el subtotal inicial (0)
 actualizarTotal();
 actualizarIVA();
 actualizarSubtotal();
@@ -261,3 +256,4 @@ actualizarTotSend();
 </script>
 </body>
 </html>
+

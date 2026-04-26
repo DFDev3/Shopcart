@@ -1,8 +1,9 @@
 import json
-import os
+from pathlib import Path
 
-# Nombre del archivo JSON
-nombre_archivo = "productos.json"
+# Nombre del archivo JSON (ruta absoluta al dataset del proyecto)
+BASE_DIR = Path(__file__).resolve().parent.parent
+nombre_archivo = BASE_DIR / "data" / "products.json"
 
 # Función para cargar los datos del archivo JSON
 def cargar_productos():
